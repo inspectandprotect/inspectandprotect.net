@@ -80,7 +80,7 @@ def footer():
 <p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
 <div><h4>Services</h4><ul>{svc}<li><a href="/pricing/">Pricing</a></li></ul></div>
 <div><h4>Areas</h4><ul>{areas}<li><a href="/areas/">All areas</a></li></ul></div>
-<div><h4>Company</h4><ul><li><a href="/reviews/">Reviews</a></li><li><a href="/for-realtors/">For realtors</a></li><li><a href="/for-insurance-agents/">For insurance agents</a></li><li><a href="/resources/">Resources</a></li><li><a href="/contact/">Book an inspection</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="/reviews/">Reviews</a></li><li><a href="/sample-reports/">Sample reports</a></li><li><a href="/for-realtors/">For realtors</a></li><li><a href="/for-insurance-agents/">For insurance agents</a></li><li><a href="/resources/">Resources</a></li><li><a href="/contact/">Book an inspection</a></li></ul></div>
 </div>
 <div class="legal">Florida Licensed Home Inspector #{LICENSE} · InterNACHI Certified · Insured. Mold inspection and testing are performed under our Florida home inspector license; we do not perform mold assessments or mold remediation. © {datetime.date.today().year} Inspect and Protect.</div>
 </div></footer>'''
@@ -256,7 +256,8 @@ def build_home():
 <li><b>STEP 2</b><strong>Book and sign</strong><p>Pick a time and sign the inspection agreement. Your slot is locked in.</p></li>
 <li><b>STEP 3</b><strong>Inspection day</strong><p>You're welcome to attend. We walk you through what we find.</p></li>
 <li><b>STEP 4</b><strong>Same-day report</strong><p>Photos, findings and plain-English explanations, delivered that day.</p></li>
-</ol></div></section>
+</ol>
+{sample_callout()}</div></section>
 
 <section><div class="wrap">
 <p class="kicker">Areas we serve</p><h2>Miami-Dade, Broward and Palm Beach</h2>
@@ -302,7 +303,7 @@ def build_services():
 <p class="kicker">{s["kicker"]}</p><h1>{s["h1"]}</h1><p class="lede">{s["lede"]}</p>
 <div class="btn-row"><a class="btn btn-gold" href="/contact/">Book · from {s["price_from"]}</a><a class="btn btn-line" href="/pricing/">Full price list</a></div></div></section>
 <section class="bg-white"><div class="wrap"><h2>What we check</h2><div class="grid" style="margin-top:28px">{covers}</div></div></section>
-<section><div class="wrap narrow prose">{paras}{note}{related}</div></section>
+<section><div class="wrap narrow prose">{paras}{note}{sample_callout() if s["slug"] in SAMPLE_SERVICES else ""}{related}</div></section>
 {faq}
 <section class="bg-white"><div class="wrap"><h2>Areas we serve</h2><div style="margin-top:20px">{city_pills_for(s["slug"])}</div>
 <h2 style="margin-top:48px">Other services</h2><div style="margin-top:24px">{services_cards(exclude=s["slug"])}</div></div></section>
@@ -497,7 +498,41 @@ def build_404():
     os.rmdir(os.path.join(OUT, "404"))
     PAGES.remove("/404/")
 
+SAMPLE_SERVICES = {"home-inspection", "pre-listing-inspection", "new-construction-inspection"}
+SAMPLES = [
+    ("sample-report-single-family-home.pdf", "Single-family home", "70 pages · 5 MB",
+     "A one-story house with an attached living space and a rear accessory structure. Shows how we document additions, roof, electrical panels, AC equipment and moisture readings."),
+    ("sample-report-townhome.pdf", "Two-story townhome", "17 pages · 6 MB",
+     "An all-electric end-unit townhome. A shorter report that shows the same layout: a summary of findings, then each system with photos and plain-English notes."),
+]
+
+def sample_callout(title="See exactly what you'll get", text="Real reports from real South Florida inspections, with client details removed.",
+                   btn="View sample reports", href="/sample-reports/"):
+    return f'''<div class="callout" style="margin-top:32px"><div style="flex:1 1 360px"><h3>{title}</h3><p style="margin:6px 0 0;color:var(--muted)">{text}</p></div><a class="btn btn-dark" href="{href}">{btn}</a></div>'''
+
+def build_samples():
+    cards = "".join(
+        f'''<div class="card"><p class="kicker" style="margin:0 0 6px">{meta}</p><h3>{name}</h3><p>{desc}</p>
+<div class="btn-row" style="margin-top:18px"><a class="btn btn-dark" href="/reports/{f}">Open the report (PDF)</a></div></div>'''
+        for f, name, meta, desc in SAMPLES)
+    body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None, "Sample reports")])}
+<h1>Sample inspection reports</h1>
+<p class="lede">These are real reports from our inspections, shared so you can see the detail before you book. Client names, addresses, dates and identifying details in the photos have been removed.</p></div></section>
+<section class="bg-white"><div class="wrap"><div class="grid grid-wide">{cards}</div>
+<div class="prose narrow" style="margin-top:40px"><h2>What every report includes</h2>
+<ul><li>A summary of findings sorted by severity: safety hazards, deficiencies, maintenance items and limitations</li>
+<li>Roof, structure, exterior, electrical, plumbing, water heater, AC and interior, each with photos</li>
+<li>Moisture meter readings and thermal images where we found something worth checking</li>
+<li>Plain-English notes on what each finding means and who should look at it</li>
+<li>Delivered the same day as the inspection</li></ul></div></div></section>{cta_band()}'''
+    page("/sample-reports/", "Sample Home Inspection Reports",
+         "See real Inspect and Protect home inspection reports from South Florida: a single-family home and a townhome, with client details removed.",
+         body, [breadcrumb_ld([(None, "Sample reports")])])
+
 def build_static():
+    src_reports = os.path.join(os.path.dirname(__file__), "reports")
+    if os.path.isdir(src_reports):
+        shutil.copytree(src_reports, os.path.join(OUT, "reports"))
     os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
     shutil.copy(os.path.join(os.path.dirname(__file__), "style.css"), os.path.join(OUT, "assets", "style.css"))
     with open(os.path.join(OUT, "favicon.svg"), "w") as f:
@@ -518,7 +553,7 @@ if __name__ == "__main__":
     import i18n
     set_groups(i18n.groups())
     build_home(); build_services(); build_pricing(); build_reviews(); build_contact()
-    build_areas(); build_service_cities(); build_resources(); build_partners()
+    build_areas(); build_service_cities(); build_resources(); build_partners(); build_samples()
     i18n.build_all(sys.modules[__name__])
     build_404(); build_static()
     print(len(PAGES), "pages"); print("\n".join(PAGES))

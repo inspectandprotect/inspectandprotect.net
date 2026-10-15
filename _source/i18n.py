@@ -257,6 +257,9 @@ T_ES = {
     "reviews_kicker": "Reseñas", "reviews_h2": "{n} reseñas de cinco estrellas",
     "google_sub": "{n} reseñas · todas de cinco estrellas · léalas en Google", "tt_sub": "{n} reseñas · Top Pro · léalas en Thumbtack",
     "leave_review": "Déjenos una reseña en Google",
+    "sample_h": "Vea exactamente lo que recibirá",
+    "sample_p": "Informes reales de inspecciones en el sur de la Florida, sin datos del cliente. Los informes están en inglés.",
+    "sample_btn": "Ver informes de muestra", "sample_link": "Informes de muestra (en inglés)",
     "steps_kicker": "Cómo funciona", "steps_h2": "Reserve en minutos. Informe el mismo día.",
     "steps": [("PASO 1", "Vea su precio", "Los precios aparecen según los pies cuadrados, así sabe el costo antes de llamar."),
               ("PASO 2", "Reserve y firme", "Elija un horario y firme el acuerdo de inspección. Su cita queda confirmada."),
@@ -526,6 +529,9 @@ T_HT = {
     "reviews_kicker": "Revi", "reviews_h2": "{n} revi senk zetwal",
     "google_sub": "{n} revi · tout senk zetwal · li yo sou Google", "tt_sub": "{n} revi · Top Pro · li yo sou Thumbtack",
     "leave_review": "Kite yon revi pou nou sou Google",
+    "sample_h": "Gade egzakteman sa w ap resevwa",
+    "sample_p": "Vrè rapò nou te fè nan Sid Florid, san enfòmasyon kliyan yo. Rapò yo ekri an anglè.",
+    "sample_btn": "Gade egzanp rapò yo", "sample_link": "Egzanp rapò (an anglè)",
     "steps_kicker": "Kijan sa mache", "steps_h2": "Rezève nan kèk minit. Rapò menm jou a.",
     "steps": [("ETAP 1", "Konnen pri a", "Pri yo afiche selon gwosè kay la, kidonk ou konnen konbyen sa koute anvan w rele."),
               ("ETAP 2", "Rezève epi siyen", "Chwazi yon lè epi siyen akò enspeksyon an. Randevou w la konfime."),
@@ -622,7 +628,7 @@ def _ftr(l):
 <p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p><p>{t["lang_note"]}</p></div>
 <div><h4>{t["nav_services"]}</h4><ul>{svc}<li><a href="{base["pricing"]}">{t["nav_pricing"]}</a></li></ul></div>
 <div><h4>{t["nav_areas"]}</h4><ul>{cities}<li><a href="{base["areas"]}">{t["all_areas"]}</a></li></ul></div>
-<div><h4>{t["company"]}</h4><ul><li><a href="/reviews/">{t["reviews_link"]}</a></li><li><a href="{base["contact"]}">{t["nav_book"]}</a></li><li><a href="/" hreflang="en" lang="en">English</a></li></ul></div>
+<div><h4>{t["company"]}</h4><ul><li><a href="/reviews/">{t["reviews_link"]}</a></li><li><a href="/sample-reports/">{t["sample_link"]}</a></li><li><a href="{base["contact"]}">{t["nav_book"]}</a></li><li><a href="/" hreflang="en" lang="en">English</a></li></ul></div>
 </div><div class="legal">{t["legal"]} © {datetime.date.today().year} Inspect and Protect.</div></div></footer>'''
     return f
 
@@ -710,7 +716,8 @@ def build_home(l):
 
 <section class="bg-white"><div class="wrap">
 <p class="kicker">{t["steps_kicker"]}</p><h2>{t["steps_h2"]}</h2>
-<ol class="steps" style="margin-top:28px">{steps}</ol></div></section>
+<ol class="steps" style="margin-top:28px">{steps}</ol>
+{B.sample_callout(t["sample_h"], t["sample_p"], t["sample_btn"])}</div></section>
 
 <section><div class="wrap">
 <p class="kicker">{t["areas_kicker"]}</p><h2>{t["areas_h2"]}</h2>
@@ -741,7 +748,7 @@ def build_services(l):
 <p class="kicker">{s["kicker"]}</p><h1>{s["h1"]}</h1><p class="lede">{s["lede"]}</p>
 <div class="btn-row"><a class="btn btn-gold" href="{BASE[l]["contact"]}">{t["book_from"].format(p=price)}</a><a class="btn btn-line" href="{BASE[l]["pricing"]}">{t["full_price_list"]}</a></div></div></section>
 <section class="bg-white"><div class="wrap"><h2>{t["what_we_check"]}</h2><div class="grid" style="margin-top:28px">{covers}</div></div></section>
-<section><div class="wrap narrow prose">{paras}{note}<p class="note">{t["lang_note"]}</p></div></section>
+<section><div class="wrap narrow prose">{paras}{note}<p class="note">{t["lang_note"]}</p>{B.sample_callout(t["sample_h"], t["sample_p"], t["sample_btn"]) if slug in B.SAMPLE_SERVICES else ""}</div></section>
 {faq}
 <section class="bg-white"><div class="wrap"><h2>{t["areas_we_serve"]}</h2><div style="margin-top:20px">{city_pills(l)}</div>
 <h2 style="margin-top:48px">{t["other_services"]}</h2><div style="margin-top:24px">{svc_cards(l, exclude=slug)}</div></div></section>
