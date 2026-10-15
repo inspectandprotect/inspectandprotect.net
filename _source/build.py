@@ -546,12 +546,17 @@ def build_certifications():
     grid = "".join(f'<div class="cert">{badge_img(s, 140)}<p>{n}</p></div>' for s, n in CERTS)
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None,"Certifications")])}
 <h1>Licenses &amp; certifications</h1><p class="lede">Licensed by the State of Florida and certified by InterNACHI, the world's largest home inspector association. Every credential below can be verified.</p></div></section>
-<section class="bg-white"><div class="wrap"><div class="grid grid-wide">
-<div class="card"><p class="kicker">State license</p><h3>Florida Licensed Home Inspector</h3><p>License #{LICENSE}, issued by the Florida Department of Business and Professional Regulation. You can look it up on the state's license search at myfloridalicense.com.</p><p><a class="more" href="https://www.myfloridalicense.com/wl11.asp" target="_blank" rel="noopener">Verify on MyFloridaLicense →</a></p></div>
+<section class="bg-white"><div class="wrap license-feature">
+<a href="/assets/brand/fl-license-sm.jpg" target="_blank" rel="noopener"><img src="/assets/brand/fl-license-sm.jpg" alt="Florida DBPR home inspector license HI18768 for Nicholas Figaro, expires July 31, 2028" width="640" height="471"></a>
+<div><p class="kicker">Florida license</p><h2>Licensed by the State of Florida</h2>
+<p class="lede">Home Inspector License #{LICENSE}, issued by the Florida Department of Business and Professional Regulation under Chapter 468, Florida Statutes. Valid through July 31, 2028.</p>
+<div class="btn-row"><a class="btn btn-gold" href="https://www.myfloridalicense.com/wl11.asp" target="_blank" rel="noopener">Verify on MyFloridaLicense</a></div></div>
+</div></section>
+<section><div class="wrap"><div class="grid grid-wide">
 <div class="card"><p class="kicker">InterNACHI</p><h3>Certified Professional Inspector (CPI)</h3><p>InterNACHI member ID {NACHI_ID}. CPI certification requires passing the inspector exam, completing ongoing education and following InterNACHI's Standards of Practice and Code of Ethics.</p><p><a class="more" href="{NACHI_VERIFY}" target="_blank" rel="noopener">Verify the certification →</a></p></div>
 <div class="card"><p class="kicker">Guarantee</p><h3>$25,000 Honor Guarantee</h3><p>As InterNACHI members, our inspections are backed by InterNACHI's $25,000 Honor Guarantee.</p><p><a class="more" href="https://www.nachi.org/honor.htm" target="_blank" rel="noopener">How the guarantee works →</a></p></div>
 </div></div></section>
-<section><div class="wrap"><p class="kicker">Specialty training</p><h2>{len(CERTS)} InterNACHI certifications</h2>
+<section class="bg-white"><div class="wrap"><p class="kicker">Specialty training</p><h2>{len(CERTS)} InterNACHI certifications</h2>
 <p class="lede">Each badge is earned by completing InterNACHI's course and exam for that specialty. They're listed on Nicholas's <a href="{NACHI_PROFILE}" target="_blank" rel="noopener">public InterNACHI profile</a>.</p>
 <div class="cert-grid">{grid}</div></div></section>{cta_band()}'''
     page("/certifications/", "Licenses & Certifications",

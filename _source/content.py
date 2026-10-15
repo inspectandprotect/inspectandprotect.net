@@ -418,7 +418,8 @@ def badge_img(slug, size=96):
     return f'<img src="/assets/brand/badges/{slug}.webp" alt="InterNACHI {name} badge" title="{name}" width="{size}" height="{size}" loading="lazy">'
 
 def badge_strip(heading, sub, more_text, more_href="/certifications/"):
-    imgs = "".join(badge_img(s) for s in HOME_BADGES)
+    imgs = ('<a href="/certifications/" class="lic-thumb"><img src="/assets/brand/fl-license-sm.jpg" alt="Florida home inspector license HI18768" width="160" height="118" loading="lazy"></a>'
+            + "".join(badge_img(s) for s in HOME_BADGES))
     return f'''<section class="bg-white badges-sec"><div class="wrap">
 <p class="kicker">{heading}</p><h2>{sub}</h2>
 <div class="badge-row">{imgs}</div>
