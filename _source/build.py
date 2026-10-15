@@ -123,6 +123,8 @@ def page(path, title, meta, body, extra_ld=None, lang="en", hdr=None, ftr=None):
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 {ld}
+<script defer src="/_vercel/insights/script.js"></script>
+{SOURCE_JS}
 </head>
 <body>
 {head_html}

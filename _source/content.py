@@ -7,11 +7,26 @@ DOMAIN = "https://www.inspectandprotect.net"
 LICENSE = "HI18768"
 FORMSPREE = "https://formspree.io/f/meenlplp"
 CALENDLY = "https://calendly.com/nicholas-inspectandprotect/inspection"
-CALENDLY_EMBED = CALENDLY + "?hide_gdpr_banner=1&primary_color=c9922a&text_color=0d1f35"
+CALENDLY_EMBED = CALENDLY + "?hide_gdpr_banner=1&primary_color=488929&text_color=01172e"
 def calendly_inline():
-    return (f'<div class="calendly-inline-widget" data-url="{CALENDLY_EMBED}" style="min-width:300px;height:1050px"></div>'
-            '<script src="https://assets.calendly.com/assets/external/widget.js" async></script>'
+    # Builds the Calendly embed with the visitor's first-touch source (saved by SOURCE_JS) as UTM tags,
+    # so every booking in Calendly shows where the customer came from.
+    return (f'<div id="cal-embed" style="min-width:300px;height:1050px"></div>'
+            '<script src="https://assets.calendly.com/assets/external/widget.js"></script>'
+            '<script>(function(){var s={};try{s=JSON.parse(localStorage.getItem("ip_src")||"{}")}catch(e){}'
+            f'Calendly.initInlineWidget({{url:"{CALENDLY_EMBED}",parentElement:document.getElementById("cal-embed"),'
+            'utm:{utmSource:s.source||"direct",utmMedium:s.medium||"none",utmCampaign:s.campaign||"",utmContent:s.landing||"",utmTerm:s.term||""}})})();</script>'
             f'<noscript><p><a class="btn btn-gold" href="{CALENDLY}">Open the booking calendar</a></p></noscript>')
+
+# Saves where a visitor first came from (Google, Bing, Yelp, Thumbtack, an ad...) for the booking calendar.
+SOURCE_JS = """<script>(function(){try{if(localStorage.getItem("ip_src"))return;var q=new URLSearchParams(location.search),r=document.referrer,h="";try{h=r?new URL(r).hostname:""}catch(e){}
+if(h.indexOf("inspectandprotect")>-1)return;var src="direct",med="none";
+if(q.get("utm_source")){src=q.get("utm_source");med=q.get("utm_medium")||"campaign"}
+else if(q.get("gclid")||q.get("gbraid")||q.get("wbraid")){src="google";med="cpc"}
+else if(q.get("msclkid")){src="bing";med="cpc"}
+else if(h){var m=h.match(/(google|bing|yahoo|duckduckgo|yelp|thumbtack|facebook|instagram|nextdoor|bbb|nachi)/);src=m?m[1]:h;med=/google|bing|yahoo|duckduckgo/.test(src)?"organic":"referral"}
+localStorage.setItem("ip_src",JSON.stringify({source:src,medium:med,campaign:q.get("utm_campaign")||"",term:q.get("utm_term")||"",landing:location.pathname}))}catch(e){}})();</script>"""
+
 GOOGLE_REVIEW_LINK = "https://g.page/r/CTqILax4Rx4oEAE/review"
 GOOGLE_PROFILE = "https://www.google.com/maps/place/Inspect+and+Protect/data=!4m2!3m1!1s0x4596fce8a6206f13:0x281e4778ac2d883a"
 THUMBTACK_PROFILE = "https://www.thumbtack.com/fl/miami/home-inspection/inspect-protect/service/579292427917369353"
