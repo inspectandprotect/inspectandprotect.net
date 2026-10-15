@@ -65,7 +65,7 @@ def nav_items():
 def header(path="/"):
     links = "".join(f'<li><a href="{h}">{t}</a></li>' for h, t in nav_items())
     return f'''<header class="site-header">{topbar(path, "en", "Call or text")}<div class="wrap">
-<a class="logo" href="/">Inspect <span>&amp;</span> Protect</a>
+<a class="logo" href="/"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a>
 <ul class="nav">{links}<li><a class="btn btn-gold" href="/contact/">Book Now</a></li></ul>
 <details class="menu"><summary aria-label="Open menu">Menu</summary><ul>{links}<li><a href="/contact/">Book Now</a></li><li><a href="tel:{PHONE_TEL}">Call {PHONE}</a></li></ul></details>
 </div></header>'''
@@ -75,7 +75,7 @@ def footer():
     areas = "".join(f'<li><a href="/areas/{a[0]}/">{a[1]}</a></li>' for a in AREAS[:8])
     return f'''<footer class="site-footer"><div class="wrap">
 <div class="footer-grid">
-<div><a class="logo" href="/">Inspect <span>&amp;</span> Protect</a>
+<div><a class="logo" href="/"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a>
 <p>Licensed home inspections, insurance inspections and mold testing across Miami-Dade, Broward and Palm Beach.</p>
 <p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
 <div><h4>Services</h4><ul>{svc}<li><a href="/pricing/">Pricing</a></li></ul></div>
@@ -112,9 +112,12 @@ def page(path, title, meta, body, extra_ld=None, lang="en", hdr=None, ftr=None):
 <meta property="og:url" content="{canonical}">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="{DOMAIN}/assets/brand/og.jpg">
+<meta name="theme-color" content="#01172e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 {ld}
 </head>
@@ -216,12 +219,14 @@ def build_home():
     covers = "".join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t, d in mold["covers"])
     body = f'''
 <section class="hero on-dark"><div class="wrap">
+<div class="hero-grid"><div>
 <p class="kicker">Florida Licensed Home Inspector · {LICENSE}</p>
 <h1>Certified Home Inspections.<br><em>Same-Day Reports.</em></h1>
 <p class="lede">Home Inspections, Wind Mitigation, 4-Point Inspections and Mold Testing across Miami-Dade, Broward and Palm Beach, with clear prices up front.</p>
 <div class="btn-row"><a class="btn btn-gold" href="/contact/">Schedule Inspection</a><a class="btn btn-line" href="/pricing/">See Our Prices</a></div>
+</div><img class="mascot" src="/assets/brand/mascot.webp" alt="Inspect and Protect mascot: a smiling house holding a magnifying glass" width="700" height="619"></div>
 <div class="stats">
-<div><strong>5.0 ★</strong><span>{TOTAL_REVIEWS} reviews · Google + Thumbtack</span></div>
+<div><strong>5.0 <span class="st">★</span></strong><span>{TOTAL_REVIEWS} reviews · Google + Thumbtack</span></div>
 <div><strong>Same-Day</strong><span>Reports with photos</span></div>
 <div><strong>Thermal + Moisture</strong><span>On every inspection</span></div>
 <div><strong>InterNACHI</strong><span>Certified inspector</span></div>
@@ -542,8 +547,10 @@ def build_static():
         shutil.copytree(src_reports, os.path.join(OUT, "reports"))
     os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
     shutil.copy(os.path.join(os.path.dirname(__file__), "style.css"), os.path.join(OUT, "assets", "style.css"))
-    with open(os.path.join(OUT, "favicon.svg"), "w") as f:
-        f.write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0d1f35"/><text x="32" y="43" font-family="Georgia,serif" font-size="30" font-weight="700" text-anchor="middle" fill="#c9922a">I&amp;P</text></svg>')
+    brand = os.path.join(os.path.dirname(__file__), "brand")
+    shutil.copytree(brand, os.path.join(OUT, "assets", "brand"))
+    shutil.copy(os.path.join(brand, "shield.svg"), os.path.join(OUT, "favicon.svg"))
+    shutil.copy(os.path.join(brand, "apple-touch-icon.png"), os.path.join(OUT, "apple-touch-icon.png"))
     with open(os.path.join(OUT, "robots.txt"), "w") as f:
         f.write(f"User-agent: *\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n")
     urls = "".join(f"<url><loc>{DOMAIN}{p}</loc><lastmod>{TODAY}</lastmod></url>" for p in PAGES)

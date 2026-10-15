@@ -235,7 +235,7 @@ T_ES = {
     "hero_h1": "Inspecciones de viviendas certificadas.<br><em>Informes el mismo día.</em>",
     "hero_lede": "Inspecciones de viviendas, mitigación de vientos, 4 puntos y pruebas de moho en Miami-Dade, Broward y Palm Beach, con precios claros desde el principio.",
     "btn_schedule": "Reservar inspección", "btn_prices": "Ver precios",
-    "stats": [("5.0 ★", f"{TOTAL_REVIEWS} reseñas · Google + Thumbtack"), ("Mismo día", "Informes con fotos"),
+    "stats": [('5.0 <span class="st">★</span>', f"{TOTAL_REVIEWS} reseñas · Google + Thumbtack"), ("Mismo día", "Informes con fotos"),
               ("Térmica + humedad", "En cada inspección"), ("InterNACHI", "Inspector certificado")],
     "services_kicker": "Servicios", "services_h2": "Todo lo que una casa del sur de la Florida necesita inspeccionar",
     "pricing_kicker": "Precios", "pricing_h2": "Precios claros. Sin sorpresas.",
@@ -508,7 +508,7 @@ T_HT = {
     "hero_h1": "Enspeksyon kay sètifye.<br><em>Rapò menm jou a.</em>",
     "hero_lede": "Enspeksyon kay, mitigasyon van, 4 pwen ak tès mwazi nan Miami-Dade, Broward ak Palm Beach, ak pri klè depi okòmansman.",
     "btn_schedule": "Rezève yon enspeksyon", "btn_prices": "Gade pri yo",
-    "stats": [("5.0 ★", f"{TOTAL_REVIEWS} revi · Google + Thumbtack"), ("Menm jou", "Rapò ak foto"),
+    "stats": [('5.0 <span class="st">★</span>', f"{TOTAL_REVIEWS} revi · Google + Thumbtack"), ("Menm jou", "Rapò ak foto"),
               ("Tèmik + imidite", "Nan chak enspeksyon"), ("InterNACHI", "Enspektè sètifye")],
     "services_kicker": "Sèvis", "services_h2": "Tout sa yon kay nan Sid Florid bezwen enspekte",
     "pricing_kicker": "Pri", "pricing_h2": "Pri klè. Pa gen sipriz.",
@@ -614,7 +614,7 @@ def _hdr(l):
     links = "".join(f'<li><a href="{a}">{b}</a></li>' for a, b in items)
     def h(path):
         return f'''<header class="site-header">{B.topbar(path, l, t["call_or_text"])}<div class="wrap">
-<a class="logo" href="{base["root"]}">Inspect <span>&amp;</span> Protect</a>
+<a class="logo" href="{base["root"]}"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a>
 <ul class="nav">{links}<li><a class="btn btn-gold" href="{base["contact"]}">{t["nav_book"]}</a></li></ul>
 <details class="menu"><summary aria-label="{t["menu"]}">{t["menu"]}</summary><ul>{links}<li><a href="{base["contact"]}">{t["nav_book"]}</a></li><li><a href="tel:{PHONE_TEL}">{t["call"]} {PHONE}</a></li></ul></details>
 </div></header>'''
@@ -626,7 +626,7 @@ def _ftr(l):
         svc = "".join(f'<li><a href="{svc_path(l, s)}">{SVC[l][s]["nav"]}</a></li>' for s in SVC_ORDER)
         cities = "".join(f'<li><a href="{city_path(l, c)}">{CITY_NAME[c]}</a></li>' for c in CITIES[l][:8])
         return f'''<footer class="site-footer"><div class="wrap"><div class="footer-grid">
-<div><a class="logo" href="{base["root"]}">Inspect <span>&amp;</span> Protect</a><p>{t["footer_about"]}</p>
+<div><a class="logo" href="{base["root"]}"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a><p>{t["footer_about"]}</p>
 <p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p><p>{t["lang_note"]}</p></div>
 <div><h4>{t["nav_services"]}</h4><ul>{svc}<li><a href="{base["pricing"]}">{t["nav_pricing"]}</a></li></ul></div>
 <div><h4>{t["nav_areas"]}</h4><ul>{cities}<li><a href="{base["areas"]}">{t["all_areas"]}</a></li></ul></div>
@@ -690,11 +690,13 @@ def build_home(l):
     steps = "".join(f"<li><b>{a}</b><strong>{b}</strong><p>{c}</p></li>" for a, b, c in t["steps"])
     body = f'''
 <section class="hero on-dark"><div class="wrap">
+<div class="hero-grid"><div>
 <p class="kicker">{t["hero_kicker"]}</p>
 <h1>{t["hero_h1"]}</h1>
 <p class="lede">{t["hero_lede"]}</p>
 <p class="lang-note">{t["lang_note"]}</p>
 <div class="btn-row"><a class="btn btn-gold" href="{BASE[l]["contact"]}">{t["btn_schedule"]}</a><a class="btn btn-line" href="{BASE[l]["pricing"]}">{t["btn_prices"]}</a></div>
+</div><img class="mascot" src="/assets/brand/mascot.webp" alt="" width="700" height="619"></div>
 <div class="stats">{stats}</div></div></section>
 
 <section class="bg-white"><div class="wrap">
