@@ -696,7 +696,7 @@ def build_home(l):
 <p class="lede">{t["hero_lede"]}</p>
 <p class="lang-note">{t["lang_note"]}</p>
 <div class="btn-row"><a class="btn btn-gold" href="{BASE[l]["contact"]}">{t["btn_schedule"]}</a><a class="btn btn-line" href="{BASE[l]["pricing"]}">{t["btn_prices"]}</a></div>
-</div><img class="mascot" src="/assets/brand/mascot.webp" alt="" width="700" height="619"></div>
+</div></div>
 <div class="stats">{stats}</div></div></section>
 
 <section class="bg-white"><div class="wrap">

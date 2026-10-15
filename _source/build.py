@@ -224,7 +224,7 @@ def build_home():
 <h1>Certified Home Inspections.<br><em>Same-Day Reports.</em></h1>
 <p class="lede">Home Inspections, Wind Mitigation, 4-Point Inspections and Mold Testing across Miami-Dade, Broward and Palm Beach, with clear prices up front.</p>
 <div class="btn-row"><a class="btn btn-gold" href="/contact/">Schedule Inspection</a><a class="btn btn-line" href="/pricing/">See Our Prices</a></div>
-</div><img class="mascot" src="/assets/brand/mascot.webp" alt="Inspect and Protect mascot: a smiling house holding a magnifying glass" width="700" height="619"></div>
+</div></div>
 <div class="stats">
 <div><strong>5.0 <span class="st">★</span></strong><span>{TOTAL_REVIEWS} reviews · Google + Thumbtack</span></div>
 <div><strong>Same-Day</strong><span>Reports with photos</span></div>
