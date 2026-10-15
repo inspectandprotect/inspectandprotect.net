@@ -33,7 +33,7 @@ ENV_PRICES = [
 # Radon and asbestos are held back until credentials are confirmed:
 #   ("Radon Test (48-hour)", "", "$225"), ("Asbestos Testing", "up to 3 samples", "$325"),
 #   ("Additional asbestos sample", "", "$65 each")
-PAYMENT_METHODS = ["Credit card", "Apple Pay", "Zelle", "Venmo", "PayPal", "Cash or check"]
+PAYMENT_METHODS = ["Zelle", "Cash", "Check"]
 # Flip to True once Afterpay/Affirm are enabled in Stripe.
 PAY_OVER_TIME = False
 
