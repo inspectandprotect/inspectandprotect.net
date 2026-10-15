@@ -89,7 +89,15 @@ a.card:hover{border-color:var(--gold)}
 .rating:hover{color:#fff;background:var(--navy-2)}
 .rating strong{font-family:Montserrat,"DM Sans",sans-serif;font-size:44px;color:var(--star);line-height:1}
 .rating small{display:block;color:#eef2f6;font-size:15px}
-.review-feed{margin-top:24px;min-height:40px}
+.review-feed{margin-top:28px;columns:3 300px;column-gap:20px}
+.review{break-inside:avoid;margin:0 0 20px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 22px 18px;display:inline-block;width:100%;box-sizing:border-box}
+.bg-white .review{background:var(--cream)}
+.review-stars{color:var(--star);font-size:20px;letter-spacing:2px;line-height:1}
+.review blockquote{margin:12px 0 14px;font-size:17px;line-height:1.6;color:var(--navy)}
+.review figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:15px;border-top:1px solid var(--line);padding-top:12px}
+.review figcaption b{font-size:16px}
+.review figcaption span{color:var(--muted)}
+.review-src{margin-left:auto;font-weight:700;color:var(--gold-ink);text-decoration:none;font-size:14px}
 .stars{color:var(--star);letter-spacing:3px}
 /* prose */
 .prose p,.prose li{color:#24324a}

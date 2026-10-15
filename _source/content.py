@@ -16,15 +16,51 @@ GOOGLE_REVIEW_LINK = "https://g.page/r/CTqILax4Rx4oEAE/review"
 GOOGLE_PROFILE = "https://www.google.com/maps/place/Inspect+and+Protect/data=!4m2!3m1!1s0x4596fce8a6206f13:0x281e4778ac2d883a"
 THUMBTACK_PROFILE = "https://www.thumbtack.com/fl/miami/home-inspection/inspect-protect/service/579292427917369353"
 
-# Poper review widget (free plan: 1 widget). Google Reviews widget id 13726.
-POPER_ACCOUNT = "ef7de61f7cb81527786b9c5f35a6bdd5"
-POPER_GOOGLE_WIDGET = "13726"
-POPER_SNIPPET = (f'<script id="poper-js-script" data-account-id="{POPER_ACCOUNT}" data-domain="inspectandprotect.net" '
-                 f'src="https://app.poper.ai/share/poper.js?accountID={POPER_ACCOUNT}" defer></script>'
-                 f'<script>window.Poper=window.Poper||[];window.Poper.push({{accountID:"{POPER_ACCOUNT}",domain:"inspectandprotect.net"}});</script>')
+# Client reviews shown on the site, copied word for word from the Thumbtack profile.
+# src: "hired" = Hired on Thumbtack, "tt" = review on Thumbtack, "google" = Google review (also shown on Thumbtack)
+REVIEWS = [
+    ("Mrs. T.", "Aug 2026", "hired", "Home inspection",
+     "My inspector was absolutely amazing! he was punctual, responsive, kind and quick with his report. He walked my husband and I through the home and showed us all the things he inspected. I would most definitely recommend him!"),
+    ("Cesar J.", "May 2026", "hired", "Home inspection",
+     "I requested an estimate and got a call within a few minutes! They were informative about the work and the price is really great. Service was very punctual and done quicker than I anticipated. Even receive full report within 24 hours with many details. Highly recommend and would reach out this company again for future inspections."),
+    ("Jhonny V.", "Jun 2026", "tt", "Home inspection",
+     "Nicholas from Inspect and Protect made sure to be very detailed on his report. Thanks to Nicholas I was able to fix my electrical system and attic space before my purchase. I’m so grateful for Inspect and Protect. 10/10. Best prices in Florida!"),
+    ("Dr. K.", "Jul 2026", "google", "Investor",
+     "I absolutely recommend him. As an investor we need to protect our investment. He is the best inspector I have meet so far. You will protect yourself, obtain honest verdicts, have a good and honest negotiation with the seller. He is very detailed in his reports."),
+    ("Denzel L.", "Jun 2026", "tt", "Home, 4-point &amp; wind mitigation",
+     "Lightning fast response! Honest and very detailed home inspection, 4 point and wind mitigation reports! It was a pleasure working with Nicholas!"),
+    ("Ovidio Z.", "Aug 2026", "google", "",
+     "I had a great experience! The service was excellent from start to finish, and everyone was friendly and professional. The prices were very fair for the quality of the work, making it an even better value. I would definitely recommend this business to anyone looking for great service at a great price."),
+    ("Lazaro L.", "Jun 2026", "hired", "Home inspection",
+     "Prompt, Comprehensive and Professional! Thanks to Nicholas we were able to narrow down which items needed attention."),
+    ("Jess P.", "May 2026", "tt", "Real estate agent",
+     "Amazing experience , very knowledgeable &amp; honest. Will definitely be using every time for my buyers"),
+    ("Danielle W.", "Jul 2026", "tt", "",
+     "Loved working with this company everything was executed flawlessly, from the consultation to the inspection! They were so professional. Definitely the company to work with!"),
+    ("Roycela M.", "Aug 2026", "google", "",
+     "Great service! The team was professional, friendly, and easy to work with. They answered all my questions, kept me informed throughout the process, and made everything simple. I highly recommend!"),
+    ("Emmanuel R.", "Jun 2026", "tt", "Home inspection",
+     "I had the pleasure of having Nicholas from Inspect and Protect as a home inspector and I rate him 5 stars!"),
+    ("Jean-Philippe E.", "Jun 2026", "hired", "Home inspection",
+     "Amazing experience would happily use for more transactions!"),
+    ("Nita S.", "Aug 2026", "google", "", "Great Price. Great Service! Fast and Efficient!"),
+    ("Garrod P.", "Aug 2026", "google", "", "Great service and very professional. Definitely would recommend!"),
+    ("Salomon P.", "Jun 2026", "hired", "Condo inspection", "Great service from Nick!"),
+    ("Diva N.", "Aug 2026", "google", "", "Amazing service!! 10 out of 10 recommend !!"),
+    ("Megan E.", "Aug 2026", "google", "", "Amazing service and pricing!!"),
+]
+_SRC = {"hired": ("Hired on Thumbtack", THUMBTACK_PROFILE), "tt": ("Thumbtack review", THUMBTACK_PROFILE),
+        "google": ("Google review", GOOGLE_PROFILE)}
 
 def review_feed():
-    return f'<div class="review-feed">{POPER_SNIPPET}<div class="poper-{POPER_GOOGLE_WIDGET}"></div></div>'
+    cards = []
+    for name, date, src, svc, text in REVIEWS:
+        label, href = _SRC[src]
+        meta = f"{svc} · {date}" if svc else date
+        cards.append(f'''<figure class="review"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+<blockquote>{text}</blockquote>
+<figcaption><b>{name}</b><span>{meta}</span><a class="review-src" href="{href}" target="_blank" rel="noopener">{label} ↗</a></figcaption></figure>''')
+    return f'<div class="review-feed">{"".join(cards)}</div>'
 
 GOOGLE_RATING, GOOGLE_COUNT = "5.0", 12
 THUMBTACK_RATING, THUMBTACK_COUNT = "5.0", 29
