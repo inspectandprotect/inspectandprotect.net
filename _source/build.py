@@ -218,7 +218,7 @@ def build_home():
 <section class="hero on-dark"><div class="wrap">
 <p class="kicker">Florida Licensed Home Inspector · {LICENSE}</p>
 <h1>Certified Home Inspections.<br><em>Same-Day Reports.</em></h1>
-<p class="lede">Home inspections, wind mitigation, 4-point and mold testing across Miami-Dade, Broward and Palm Beach, with clear prices up front.</p>
+<p class="lede">Home Inspections, Wind Mitigation, 4-Point Inspections and Mold Testing across Miami-Dade, Broward and Palm Beach, with clear prices up front.</p>
 <div class="btn-row"><a class="btn btn-gold" href="/contact/">Schedule Inspection</a><a class="btn btn-line" href="/pricing/">See Our Prices</a></div>
 <div class="stats">
 <div><strong>5.0 ★</strong><span>{TOTAL_REVIEWS} reviews · Google + Thumbtack</span></div>
@@ -372,7 +372,7 @@ def build_contact():
 # ================================================================ AREAS
 def build_areas():
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None,"Areas")])}
-<h1>Areas we serve</h1><p class="lede">Home inspections, wind mitigation, 4-point and mold testing across Miami-Dade, Broward and Palm Beach counties.</p></div></section>
+<h1>Areas we serve</h1><p class="lede">Home Inspections, Wind Mitigation, 4-Point Inspections and Mold Testing across Miami-Dade, Broward and Palm Beach counties.</p></div></section>
 <section class="bg-white"><div class="wrap">'''
     for county in ("Miami-Dade", "Broward", "Palm Beach"):
         cities = [a for a in AREAS if a[2] == county]
@@ -392,7 +392,7 @@ def build_areas():
         ]
         body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([("/areas/","Areas"),(None,name)])}
 <p class="kicker">{county} County</p><h1>Home Inspector in {name}, FL</h1>
-<p class="lede">Licensed home inspections, wind mitigation, 4-point and mold testing in {name}, with same-day reports.</p>
+<p class="lede">Licensed Home Inspections, Wind Mitigation, 4-Point Inspections and Mold Testing in {name}, with same-day reports.</p>
 <div class="btn-row"><a class="btn btn-gold" href="/contact/">Book in {name}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">Call {PHONE}</a></div></div></section>
 <section class="bg-white"><div class="wrap narrow prose">
 <h2>Inspecting homes in {name}</h2><p>{intro}</p><p>{note}</p>
