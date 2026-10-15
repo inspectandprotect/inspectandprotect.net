@@ -72,7 +72,7 @@ SERVICES = [
             "You're welcome to attend. We walk you through what we found, answer questions on the spot, and send the full report with photos the same day so you can move quickly on your inspection period.",
         ],
         "faq": [
-            ("How long does a home inspection take?", "Most inspections take 2 to 4 hours depending on the size, age and condition of the home."),
+            ("How long does a home inspection take?", "Most inspections take 1 to 2 hours depending on the size, age and condition of the home."),
             ("When do I get the report?", "Your full report with photos is delivered the same day as the inspection."),
             ("Can you add a wind mitigation or 4-point?", "Yes. We can complete both insurance forms during the same visit so you only schedule once."),
         ],

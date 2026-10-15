@@ -277,7 +277,7 @@ def build_home():
 
 HOME_FAQ = [
     ("How much does a home inspection cost?", "Home inspections start at $325 for condos and homes under 1,200 sq ft and are priced by size. Wind mitigation and 4-point inspections are $150 each. See the full price list on our pricing page."),
-    ("How long does a home inspection take?", "Most inspections take 2 to 4 hours depending on the size and condition of the home. You're welcome to attend."),
+    ("How long does a home inspection take?", "Most inspections take 1 to 2 hours depending on the size and condition of the home. You're welcome to attend."),
     ("When will I receive my report?", "Reports and photos are delivered the same day as your inspection."),
     ("What areas do you serve?", "Miami-Dade, Broward and Palm Beach counties. Call for availability elsewhere in Florida."),
     ("Are you licensed and insured?", f"Yes. We're a Florida licensed home inspector (#{LICENSE}), InterNACHI certified, and carry errors and omissions and general liability insurance."),

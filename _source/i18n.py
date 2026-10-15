@@ -106,7 +106,7 @@ SVC_ES = {
             "Puede acompañarnos durante la inspección. Le mostramos lo que encontramos, respondemos sus preguntas en el momento y le enviamos el informe completo con fotos el mismo día.",
         ],
         "faq": [
-            ("¿Cuánto dura una inspección de vivienda?", "La mayoría toma de 2 a 4 horas, según el tamaño, la edad y el estado de la casa."),
+            ("¿Cuánto dura una inspección de vivienda?", "La mayoría toma de 1 a 2 horas, según el tamaño, la edad y el estado de la casa."),
             ("¿Cuándo recibo el informe?", "El informe completo con fotos se entrega el mismo día de la inspección. Los informes están en inglés."),
             ("¿Pueden hacer también la mitigación de vientos o la de 4 puntos?", "Sí. Podemos completar ambos formularios de seguro en la misma visita."),
         ],
@@ -309,7 +309,7 @@ T_ES = {
     "home_meta": "Inspector de viviendas con licencia de la Florida (HI18768) en Miami-Dade, Broward y Palm Beach. Inspecciones desde $325, mitigación de vientos y 4 puntos $150, pruebas de moho $375. Informes el mismo día.",
     "home_faq": [
         ("¿Cuánto cuesta una inspección de vivienda?", "Las inspecciones empiezan en $325 para condominios y casas de menos de 1,200 pies cuadrados y se calculan según el tamaño. La mitigación de vientos y la inspección de 4 puntos cuestan $150 cada una."),
-        ("¿Cuánto dura una inspección?", "La mayoría toma de 2 a 4 horas según el tamaño y el estado de la casa. Puede acompañarnos."),
+        ("¿Cuánto dura una inspección?", "La mayoría toma de 1 a 2 horas según el tamaño y el estado de la casa. Puede acompañarnos."),
         ("¿Cuándo recibo el informe?", "Los informes y las fotos se entregan el mismo día. Los informes están en inglés."),
         ("¿En qué idioma me atienden?", "Hablamos inglés. Puede escribirnos por texto en español y le responderemos con ayuda de traducción."),
         ("¿Tienen licencia y seguro?", f"Sí. Somos inspectores de viviendas con licencia de la Florida (#{LICENSE}), certificados por InterNACHI, con seguro de errores y omisiones y de responsabilidad civil."),
@@ -375,7 +375,7 @@ SVC_HT = {
             "Ou ka vin avè nou pandan enspeksyon an. N ap montre w sa nou jwenn, n ap reponn kesyon w yo sou plas, epi n ap voye rapò konplè a ak foto menm jou a.",
         ],
         "faq": [
-            ("Konbyen tan yon enspeksyon kay pran?", "Pifò pran 2 a 4 èdtan, selon gwosè, laj ak kondisyon kay la."),
+            ("Konbyen tan yon enspeksyon kay pran?", "Pifò pran 1 a 2 èdtan, selon gwosè, laj ak kondisyon kay la."),
             ("Kilè m ap resevwa rapò a?", "Nou voye rapò konplè a ak foto menm jou enspeksyon an. Rapò yo ekri an anglè."),
             ("Èske nou ka fè mitigasyon van ak enspeksyon 4 pwen an tou?", "Wi. Nou ka ranpli de fòm asirans yo pandan menm vizit la."),
         ],
@@ -578,7 +578,7 @@ T_HT = {
     "home_meta": "Enspektè kay ki gen lisans Florid (HI18768) nan Miami-Dade, Broward ak Palm Beach. Enspeksyon kay apati $325, mitigasyon van ak 4 pwen $150, tès mwazi $375. Rapò menm jou a.",
     "home_faq": [
         ("Konbyen yon enspeksyon kay koute?", "Enspeksyon kay kòmanse a $325 pou kondo ak kay ki gen mwens pase 1,200 pye kare, epi pri a monte selon gwosè kay la. Mitigasyon van ak enspeksyon 4 pwen koute $150 chak."),
-        ("Konbyen tan yon enspeksyon pran?", "Pifò pran 2 a 4 èdtan selon gwosè ak kondisyon kay la. Ou ka vin avè nou."),
+        ("Konbyen tan yon enspeksyon pran?", "Pifò pran 1 a 2 èdtan selon gwosè ak kondisyon kay la. Ou ka vin avè nou."),
         ("Kilè m ap resevwa rapò a?", "Nou voye rapò ak foto yo menm jou a. Rapò yo ekri an anglè."),
         ("Nan ki lang nou pale?", "Nou pale anglè. Ou ka voye tèks ban nou an kreyòl, epi n ap reponn ou avèk èd tradiksyon."),
         ("Èske nou gen lisans ak asirans?", f"Wi. Nou se enspektè kay ki gen lisans Florid (#{LICENSE}), sètifye pa InterNACHI, ak asirans erè ak omisyon ak asirans responsablite sivil."),
