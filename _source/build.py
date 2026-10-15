@@ -117,7 +117,7 @@ def page(path, title, meta, body, extra_ld=None, lang="en", hdr=None, ftr=None):
 <meta name="theme-color" content="#01172e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 {ld}
 </head>
@@ -186,7 +186,7 @@ def pricing_block():
 <div class="card price-card feature"><h3>Mold Inspection &amp; Testing</h3><p class="sub">Lab analysis included</p>{rows(ENV_PRICES)}
 <p><a href="/services/mold-inspection-testing/">What's included →</a></p></div>
 </div>
-<div class="paybar"><div style="flex:1 1 320px"><h3>Simple payment</h3><p style="margin:4px 0 0;color:#c9d2dc">{pay_text}</p></div><div class="chips">{pay}</div></div>
+<div class="paybar"><div style="flex:1 1 320px"><h3>Simple payment</h3><p style="margin:4px 0 0;color:#eef2f6">{pay_text}</p></div><div class="chips">{pay}</div></div>
 <p class="note" style="margin-top:12px">Every inspection includes moisture meter and thermal imaging, photos and a full digital report. Travel fee may apply outside Miami-Dade and Broward.</p>'''
 
 def reviews_block():

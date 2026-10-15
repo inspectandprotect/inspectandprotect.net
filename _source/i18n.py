@@ -659,7 +659,7 @@ def pricing_block(l):
 <div class="card price-card"><h3>{t["card_ins"]}</h3><p class="sub">{t["card_ins_sub"]}</p>{B.rows(t["insurance"])}<p>{t["ins_blurb"]}</p></div>
 <div class="card price-card feature"><h3>{t["card_mold"]}</h3><p class="sub">{t["card_mold_sub"]}</p>{B.rows(t["env"])}<p><a href="{svc_path(l, "mold-inspection-testing")}">{t["whats_included"]}</a></p></div>
 </div>
-<div class="paybar"><div style="flex:1 1 320px"><h3>{t["pay_title"]}</h3><p style="margin:4px 0 0;color:#c9d2dc">{ptext}</p></div><div class="chips">{pay}</div></div>
+<div class="paybar"><div style="flex:1 1 320px"><h3>{t["pay_title"]}</h3><p style="margin:4px 0 0;color:#eef2f6">{ptext}</p></div><div class="chips">{pay}</div></div>
 <p class="note" style="margin-top:12px">{t["price_note"]}</p>'''
 
 def reviews_block(l):
