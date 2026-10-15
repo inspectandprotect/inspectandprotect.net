@@ -77,10 +77,10 @@ def footer():
 <div class="footer-grid">
 <div><a class="logo" href="/"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a>
 <p>Licensed home inspections, insurance inspections and mold testing across Miami-Dade, Broward and Palm Beach.</p>
-<p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
+<p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>{footer_seals()}</div>
 <div><h4>Services</h4><ul>{svc}<li><a href="/pricing/">Pricing</a></li></ul></div>
 <div><h4>Areas</h4><ul>{areas}<li><a href="/areas/">All areas</a></li></ul></div>
-<div><h4>Company</h4><ul><li><a href="/reviews/">Reviews</a></li><li><a href="/sample-reports/">Sample reports</a></li><li><a href="/for-realtors/">For realtors</a></li><li><a href="/for-insurance-agents/">For insurance agents</a></li><li><a href="/resources/">Resources</a></li><li><a href="/contact/">Book an inspection</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="/reviews/">Reviews</a></li><li><a href="/sample-reports/">Sample reports</a></li><li><a href="/certifications/">Certifications</a></li><li><a href="/for-realtors/">For realtors</a></li><li><a href="/for-insurance-agents/">For insurance agents</a></li><li><a href="/resources/">Resources</a></li><li><a href="/contact/">Book an inspection</a></li></ul></div>
 </div>
 <div class="legal">Florida Licensed Home Inspector #{LICENSE} · InterNACHI Certified · Insured. Mold inspection and testing are performed under our Florida home inspector license; we do not perform mold assessments or mold remediation. © {datetime.date.today().year} Inspect and Protect.</div>
 </div></footer>'''
@@ -236,6 +236,7 @@ def build_home():
 <p class="kicker">Services</p><h2>Everything a South Florida home needs inspected</h2>
 <div style="margin-top:32px">{services_cards()}</div>
 </div></section>
+{badge_strip("Certified &amp; verified", f"Florida licensed and InterNACHI certified in {len(CERTS) - 3} inspection specialties", f"See all {len(CERTS)} certifications and verify them")}
 
 <section id="pricing"><div class="wrap">
 <p class="kicker">Pricing</p><h2>Straightforward prices. No surprises at the door.</h2>
@@ -541,6 +542,22 @@ def build_samples():
          "See real Inspect and Protect home inspection reports from South Florida: a single-family home and a townhome, with client details removed.",
          body, [breadcrumb_ld([(None, "Sample reports")])])
 
+def build_certifications():
+    grid = "".join(f'<div class="cert">{badge_img(s, 140)}<p>{n}</p></div>' for s, n in CERTS)
+    body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None,"Certifications")])}
+<h1>Licenses &amp; certifications</h1><p class="lede">Licensed by the State of Florida and certified by InterNACHI, the world's largest home inspector association. Every credential below can be verified.</p></div></section>
+<section class="bg-white"><div class="wrap"><div class="grid grid-wide">
+<div class="card"><p class="kicker">State license</p><h3>Florida Licensed Home Inspector</h3><p>License #{LICENSE}, issued by the Florida Department of Business and Professional Regulation. You can look it up on the state's license search at myfloridalicense.com.</p><p><a class="more" href="https://www.myfloridalicense.com/wl11.asp" target="_blank" rel="noopener">Verify on MyFloridaLicense →</a></p></div>
+<div class="card"><p class="kicker">InterNACHI</p><h3>Certified Professional Inspector (CPI)</h3><p>InterNACHI member ID {NACHI_ID}. CPI certification requires passing the inspector exam, completing ongoing education and following InterNACHI's Standards of Practice and Code of Ethics.</p><p><a class="more" href="{NACHI_VERIFY}" target="_blank" rel="noopener">Verify the certification →</a></p></div>
+<div class="card"><p class="kicker">Guarantee</p><h3>$25,000 Honor Guarantee</h3><p>As InterNACHI members, our inspections are backed by InterNACHI's $25,000 Honor Guarantee.</p><p><a class="more" href="https://www.nachi.org/honor.htm" target="_blank" rel="noopener">How the guarantee works →</a></p></div>
+</div></div></section>
+<section><div class="wrap"><p class="kicker">Specialty training</p><h2>{len(CERTS)} InterNACHI certifications</h2>
+<p class="lede">Each badge is earned by completing InterNACHI's course and exam for that specialty. They're listed on Nicholas's <a href="{NACHI_PROFILE}" target="_blank" rel="noopener">public InterNACHI profile</a>.</p>
+<div class="cert-grid">{grid}</div></div></section>{cta_band()}'''
+    page("/certifications/", "Licenses & Certifications",
+         f"Florida licensed home inspector #{LICENSE} and InterNACHI Certified Professional Inspector with {len(CERTS)} certifications including wind mitigation, roof, mold and moisture intrusion.",
+         body, [breadcrumb_ld([(None, "Certifications")])])
+
 def build_static():
     src_reports = os.path.join(os.path.dirname(__file__), "reports")
     if os.path.isdir(src_reports):
@@ -567,7 +584,7 @@ if __name__ == "__main__":
     import i18n
     set_groups(i18n.groups())
     build_home(); build_services(); build_pricing(); build_reviews(); build_contact()
-    build_areas(); build_service_cities(); build_resources(); build_partners(); build_samples()
+    build_areas(); build_service_cities(); build_resources(); build_partners(); build_samples(); build_certifications()
     i18n.build_all(sys.modules[__name__])
     build_404(); build_static()
     print(len(PAGES), "pages"); print("\n".join(PAGES))

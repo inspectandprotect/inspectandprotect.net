@@ -307,7 +307,7 @@ T_ES = {
     "travel_free": "No hay cargo por distancia dentro de Miami-Dade y Broward.",
     "travel_pb": "Puede aplicar un cargo por distancia en el condado de Palm Beach; se lo diremos antes de reservar.",
     "footer_about": "Inspecciones de viviendas con licencia, inspecciones para el seguro y pruebas de moho en Miami-Dade, Broward y Palm Beach.",
-    "company": "Empresa", "reviews_link": "Reseñas",
+    "company": "Empresa", "reviews_link": "Reseñas", "certs_link": "Certificaciones (en inglés)", "badges_kicker": "Certificado y verificado", "badges_h2": "Licencia de la Florida y certificado por InterNACHI en {n} especialidades de inspección", "badges_more": "Ver las {n} certificaciones",
     "legal": f"Inspector de viviendas con licencia de la Florida #{LICENSE} · Certificado por InterNACHI · Asegurado. La inspección y las pruebas de moho se realizan bajo nuestra licencia de inspector de viviendas de la Florida; no realizamos evaluaciones ni remediación de moho.",
     "home_title": "Inspector de viviendas en Miami y el sur de la Florida | Inspect and Protect",
     "home_meta": "Inspector de viviendas con licencia de la Florida (HI18768) en Miami-Dade, Broward y Palm Beach. Inspecciones desde $325, mitigación de vientos y 4 puntos $150, pruebas de moho $375. Informes el mismo día.",
@@ -580,7 +580,7 @@ T_HT = {
     "travel_free": "Pa gen frè vwayaj nan Miami-Dade ak Broward.",
     "travel_pb": "Ka gen yon frè vwayaj nan Konte Palm Beach; n ap di w anvan w rezève.",
     "footer_about": "Enspeksyon kay ak lisans, enspeksyon pou asirans ak tès mwazi nan Miami-Dade, Broward ak Palm Beach.",
-    "company": "Konpayi", "reviews_link": "Revi",
+    "company": "Konpayi", "reviews_link": "Revi", "certs_link": "Sètifikasyon (an anglè)", "badges_kicker": "Sètifye epi verifye", "badges_h2": "Lisans Florid ak sètifikasyon InterNACHI nan {n} espesyalite enspeksyon", "badges_more": "Gade {n} sètifikasyon yo",
     "legal": f"Enspektè kay ki gen lisans Florid #{LICENSE} · Sètifye pa InterNACHI · Asire. Nou fè enspeksyon ak tès mwazi anba lisans enspektè kay Florid nou an; nou pa fè evalyasyon mwazi ni retire mwazi.",
     "home_title": "Enspektè kay nan Miami ak Sid Florid | Inspect and Protect",
     "home_meta": "Enspektè kay ki gen lisans Florid (HI18768) nan Miami-Dade, Broward ak Palm Beach. Enspeksyon kay apati $325, mitigasyon van ak 4 pwen $150, tès mwazi $375. Rapò menm jou a.",
@@ -627,10 +627,10 @@ def _ftr(l):
         cities = "".join(f'<li><a href="{city_path(l, c)}">{CITY_NAME[c]}</a></li>' for c in CITIES[l][:8])
         return f'''<footer class="site-footer"><div class="wrap"><div class="footer-grid">
 <div><a class="logo" href="{base["root"]}"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a><p>{t["footer_about"]}</p>
-<p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p><p>{t["lang_note"]}</p></div>
+<p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p><p>{t["lang_note"]}</p>{footer_seals()}</div>
 <div><h4>{t["nav_services"]}</h4><ul>{svc}<li><a href="{base["pricing"]}">{t["nav_pricing"]}</a></li></ul></div>
 <div><h4>{t["nav_areas"]}</h4><ul>{cities}<li><a href="{base["areas"]}">{t["all_areas"]}</a></li></ul></div>
-<div><h4>{t["company"]}</h4><ul><li><a href="/reviews/">{t["reviews_link"]}</a></li><li><a href="/sample-reports/">{t["sample_link"]}</a></li><li><a href="{base["contact"]}">{t["nav_book"]}</a></li><li><a href="/" hreflang="en" lang="en">English</a></li></ul></div>
+<div><h4>{t["company"]}</h4><ul><li><a href="/reviews/">{t["reviews_link"]}</a></li><li><a href="/sample-reports/">{t["sample_link"]}</a></li><li><a href="/certifications/">{t["certs_link"]}</a></li><li><a href="{base["contact"]}">{t["nav_book"]}</a></li><li><a href="/" hreflang="en" lang="en">English</a></li></ul></div>
 </div><div class="legal">{t["legal"]} © {datetime.date.today().year} Inspect and Protect.</div></div></footer>'''
     return f
 
@@ -702,6 +702,7 @@ def build_home(l):
 <section class="bg-white"><div class="wrap">
 <p class="kicker">{t["services_kicker"]}</p><h2>{t["services_h2"]}</h2>
 <div style="margin-top:32px">{svc_cards(l)}</div></div></section>
+{badge_strip(t["badges_kicker"], t["badges_h2"].format(n=len(CERTS) - 3), t["badges_more"].format(n=len(CERTS)))}
 
 <section><div class="wrap">
 <p class="kicker">{t["pricing_kicker"]}</p><h2>{t["pricing_h2"]}</h2>

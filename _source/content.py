@@ -378,3 +378,52 @@ PARTNERS = [
         ],
     },
 ]
+
+
+# ---------------------------------------------------------------- CREDENTIALS
+NACHI_ID = "NACHI26041410"
+NACHI_VERIFY = f"https://www.nachi.org/verify?nachiid={NACHI_ID}"
+NACHI_PROFILE = "https://www.nachi.org/certified-inspectors/nicholas-figaro-205492"
+DBPR_VERIFY = "https://www.myfloridalicense.com/wl11.asp?mode=0&SID=&brd=0&typ="
+# (file in /assets/brand/badges/, display name)  -- order = importance
+CERTS = [
+    ("internachi-certified-professional-inspector-cpi", "Certified Professional Inspector (CPI)"),
+    ("internachi-certified-blue-gold", "InterNACHI Certified"),
+    ("honor-guarantee", "$25,000 Honor Guarantee"),
+    ("residential-property-inspector", "Residential Property Inspector"),
+    ("wind-mitigation-inspector", "Wind Mitigation Inspector"),
+    ("roof-inspector", "Roof Inspector"),
+    ("mold-inspector", "Mold Inspector"),
+    ("moisture-intrusion-inspector", "Moisture Intrusion Inspector"),
+    ("post-hurricane-building-safety-inspector", "Post-Hurricane Building Safety Inspector"),
+    ("electrical-inspector", "Electrical Inspector"),
+    ("plumbing-inspector", "Plumbing Inspector"),
+    ("exterior-inspector", "Exterior Inspector"),
+    ("attic-insulation-ventilation-interior", "Attic, Insulation, Ventilation & Interior"),
+    ("new-construction-inspector", "New Construction Inspector"),
+    ("11th-month-warranty-inspector", "11th Month Warranty Inspections"),
+    ("annual-home-maintenance-inspections", "Annual Home Maintenance Inspections"),
+    ("kitchen-inspector", "Kitchen Inspector"),
+    ("deck-inspector", "Deck Inspector"),
+    ("crawlspace-inspector", "Crawlspace Inspector"),
+    ("chimney-inspector", "Chimney Inspector"),
+    ("safe-workplace-inspector", "Safe Workplace Inspector"),
+]
+HOME_BADGES = ["internachi-certified-professional-inspector-cpi", "honor-guarantee", "wind-mitigation-inspector",
+               "roof-inspector", "mold-inspector", "moisture-intrusion-inspector", "post-hurricane-building-safety-inspector",
+               "residential-property-inspector"]
+
+def badge_img(slug, size=96):
+    name = dict(CERTS)[slug]
+    return f'<img src="/assets/brand/badges/{slug}.webp" alt="InterNACHI {name} badge" title="{name}" width="{size}" height="{size}" loading="lazy">'
+
+def badge_strip(heading, sub, more_text, more_href="/certifications/"):
+    imgs = "".join(badge_img(s) for s in HOME_BADGES)
+    return f'''<section class="bg-white badges-sec"><div class="wrap">
+<p class="kicker">{heading}</p><h2>{sub}</h2>
+<div class="badge-row">{imgs}</div>
+<p style="margin-top:20px"><a class="more" href="{more_href}">{more_text} →</a></p></div></section>'''
+
+def footer_seals():
+    return (f'<div class="seals"><a href="{NACHI_VERIFY}" target="_blank" rel="noopener"><img src="https://www.nachi.org/webseals/sb-v2-{NACHI_ID}.gif" width="98" height="102" alt="Certified by the International Association of Certified Home Inspectors" loading="lazy"></a>'
+            f'<a href="{NACHI_VERIFY}" target="_blank" rel="noopener"><img src="https://www.nachi.org/webseals/internachi-honor-guarantee.png?nachiid={NACHI_ID}" width="102" height="102" alt="$25,000 Honor Guarantee, Backed by InterNACHI" loading="lazy"></a></div>')
