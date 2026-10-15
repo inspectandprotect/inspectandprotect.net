@@ -45,11 +45,14 @@ BUSINESS_LD = {
     "areaServed": [{"@type": "City", "name": f"{a[1]}, FL"} for a in AREAS]
                   + [{"@type": "AdministrativeArea", "name": c} for c in ("Miami-Dade County, FL", "Broward County, FL", "Palm Beach County, FL")],
     "openingHoursSpecification": {"@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00", "closes": "23:59"},
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00", "closes": "18:00"},
+    "logo": DOMAIN + "/apple-touch-icon.png",
+    "image": DOMAIN + "/assets/brand/og.jpg",
+    "founder": {"@type": "Person", "name": "Nicholas Figaro", "jobTitle": "Florida Licensed Home Inspector"},
     "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license",
                       "name": f"Florida Home Inspector License {LICENSE}"},
-    "sameAs": [GOOGLE_PROFILE, THUMBTACK_PROFILE],
+    "sameAs": [GOOGLE_PROFILE, THUMBTACK_PROFILE, NACHI_PROFILE],
 }
 
 def nav_items():
