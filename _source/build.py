@@ -127,6 +127,7 @@ def page(path, title, meta, body, extra_ld=None, lang="en", hdr=None, ftr=None):
 {body}
 </main>
 {foot_html}
+{mobile_bar(lang)}
 </body>
 </html>'''
     dest = os.path.join(OUT, path.strip("/"), "index.html") if path != "/" else os.path.join(OUT, "index.html")
@@ -154,13 +155,29 @@ def faq_ld(faq):
 def faq_html(faq):
     return "".join(f'<details class="faq"><summary>{q}</summary><p>{a}</p></details>' for q, a in faq)
 
-def cta_band(text="Ready to book?", sub="Call, text or book online. We confirm within 2 hours.",
+def cta_band(text="Ready to book?", sub="Call, text or book online. We confirm within 30 minutes.",
              btn="Book an Inspection", call=None, href="/contact/"):
     call = call or f"Call {PHONE}"
     return f'''<section class="bg-navy on-dark"><div class="wrap">
 <h2>{text}</h2><p class="lede">{sub}</p>
 <div class="btn-row"><a class="btn btn-gold" href="{href}">{btn}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">{call}</a></div>
 </div></section>'''
+
+def cta_strip(text="Ready to book?", sub="Call, text or book online. We confirm within 30 minutes.",
+              btn="Book Online", call=None, href="/contact/"):
+    call = (call or f"Call or Text {PHONE}").replace(PHONE, f'<span class="nw">{PHONE}</span>')
+    return f'''<div class="wrap"><div class="cta-strip">
+<div class="cta-strip-text"><strong>{text}</strong><span>{sub}</span></div>
+<div class="cta-strip-btns"><a class="btn btn-gold" href="{href}">{btn}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">{call}</a></div>
+</div></div>'''
+
+MOBILE_BAR = {"en": ("Book Online", "Call / Text", "/contact/"),
+              "es": ("Reservar", "Llamar / Texto", "/es/reservar/"),
+              "ht": ("Rezève", "Rele / Tèks", "/ht/rezeve/")}
+
+def mobile_bar(lang="en"):
+    book, call, href = MOBILE_BAR.get(lang, MOBILE_BAR["en"])
+    return f'<nav class="mobile-bar" aria-label="Book or call"><a class="mb-call" href="tel:{PHONE_TEL}">{call}</a><a class="mb-book" href="{href}">{book}</a></nav>'
 
 def rows(items):
     out = ""
@@ -235,13 +252,13 @@ def build_home():
 <section class="bg-white"><div class="wrap">
 <p class="kicker">Services</p><h2>Everything a South Florida home needs inspected</h2>
 <div style="margin-top:32px">{services_cards()}</div>
-</div></section>
+</div>{cta_strip()}</section>
 {badge_strip("Certified &amp; verified", f"Florida licensed and InterNACHI certified in {len(CERTS) - 3} inspection specialties", f"See all {len(CERTS)} certifications and verify them")}
 
 <section id="pricing"><div class="wrap">
 <p class="kicker">Pricing</p><h2>Straightforward prices. No surprises at the door.</h2>
 <div style="margin-top:32px">{pricing_block()}</div>
-</div></section>
+</div>{cta_strip()}</section>
 
 <section class="bg-white"><div class="wrap">
 <p class="kicker">Mold Inspection &amp; Testing</p><h2>We find the moisture first, then test what matters.</h2>
@@ -253,7 +270,7 @@ def build_home():
 <section><div class="wrap">
 <p class="kicker">Reviews</p><h2>{TOTAL_REVIEWS} five-star reviews and counting</h2>
 <div style="margin-top:28px">{reviews_block()}</div>
-</div></section>
+</div>{cta_strip()}</section>
 
 <section class="bg-white"><div class="wrap">
 <p class="kicker">How it works</p><h2>Booked in minutes. Report the same day.</h2>
@@ -357,7 +374,7 @@ def build_contact():
 </div></section>
 <section><div class="wrap narrow" id="request">
 <p class="kicker">Or send a request</p><h2>Don't see a time that works?</h2>
-<p class="note" style="font-size:15px;margin-bottom:20px">Send your details and we'll call or text you within 2 hours to find a time.</p>
+<p class="note" style="font-size:15px;margin-bottom:20px">Send your details and we'll call or text you within 30 minutes to find a time.</p>
 <form class="book" action="{FORMSPREE}" method="POST">
 <input type="hidden" name="_subject" value="New inspection request – inspectandprotect.net">
 <label>First name<input name="first_name" required autocomplete="given-name"></label>

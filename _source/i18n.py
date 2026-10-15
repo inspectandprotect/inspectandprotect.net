@@ -267,8 +267,8 @@ T_ES = {
               ("PASO 4", "Informe el mismo día", "Fotos, hallazgos y explicaciones claras, entregados ese mismo día.")],
     "areas_kicker": "Áreas", "areas_h2": "Miami-Dade, Broward y Palm Beach",
     "faq_kicker": "Preguntas frecuentes", "faq_h2": "Preguntas comunes",
-    "cta_h": "¿Listo para reservar?", "cta_p": "Llame, escriba o reserve en línea. Confirmamos en menos de 2 horas.",
-    "cta_btn": "Reservar inspección", "cta_call": "Llamar al {phone}",
+    "cta_h": "¿Listo para reservar?", "cta_p": "Llame, escriba o reserve en línea. Confirmamos en menos de 30 minutos.",
+    "cta_btn": "Reservar inspección", "cta_call": "Llamar al {phone}", "strip_btn": "Reservar en línea", "strip_call": "Llame o escriba al {phone}",
     "what_we_check": "Qué revisamos", "questions": "Preguntas", "other_services": "Otros servicios", "areas_we_serve": "Áreas que servimos",
     "book_from": "Reservar · desde {p}", "full_price_list": "Lista de precios",
     "svc_index_title": "Servicios de inspección de viviendas en Miami y el sur de la Florida",
@@ -279,8 +279,8 @@ T_ES = {
     "pricing_meta": "Precios de inspección de viviendas según los pies cuadrados desde $325. Mitigación de vientos y 4 puntos $150 cada una. Inspección y prueba de moho $375 con laboratorio.",
     "pricing_h1": "Precios de inspección", "pricing_lede": "Precios claros antes de reservar. Sin cargos ocultos.", "pricing_faq_h2": "Preguntas sobre precios",
     "contact_title": "Reservar una inspección de vivienda",
-    "contact_meta": "Reserve una inspección de vivienda, mitigación de vientos, 4 puntos o prueba de moho en el sur de la Florida. Confirmamos en menos de 2 horas.",
-    "contact_h1": "Reservar una inspección", "contact_lede": "Envíe sus datos y le confirmaremos en menos de 2 horas.",
+    "contact_meta": "Reserve una inspección de vivienda, mitigación de vientos, 4 puntos o prueba de moho en el sur de la Florida. Confirmamos en menos de 30 minutos.",
+    "contact_h1": "Reservar una inspección", "contact_lede": "Envíe sus datos y le confirmaremos en menos de 30 minutos.",
     "f_first": "Nombre", "f_last": "Apellido", "f_phone": "Teléfono", "f_email": "Correo electrónico", "f_address": "Dirección de la propiedad",
     "f_service": "Servicio", "f_sqft": "Pies cuadrados", "f_date": "Fecha preferida", "f_source": "¿Cómo nos encontró?",
     "sources": ["Google", "Thumbtack", "Agente de bienes raíces", "Agente de seguros", "Amigo o familiar", "Otro"],
@@ -540,8 +540,8 @@ T_HT = {
               ("ETAP 4", "Rapò menm jou a", "Foto, rezilta ak eksplikasyon klè, menm jou a.")],
     "areas_kicker": "Zòn", "areas_h2": "Miami-Dade, Broward ak Palm Beach",
     "faq_kicker": "Kesyon", "faq_h2": "Kesyon moun poze souvan",
-    "cta_h": "Ou pare pou rezève?", "cta_p": "Rele, voye tèks oswa rezève sou entènèt. N ap konfime nan mwens pase 2 èdtan.",
-    "cta_btn": "Rezève yon enspeksyon", "cta_call": "Rele {phone}",
+    "cta_h": "Ou pare pou rezève?", "cta_p": "Rele, voye tèks oswa rezève sou entènèt. N ap konfime nan mwens pase 30 minit.",
+    "cta_btn": "Rezève yon enspeksyon", "cta_call": "Rele {phone}", "strip_btn": "Rezève sou entènèt", "strip_call": "Rele oswa tèks {phone}",
     "what_we_check": "Sa nou tcheke", "questions": "Kesyon", "other_services": "Lòt sèvis", "areas_we_serve": "Zòn nou sèvi",
     "book_from": "Rezève · apati {p}", "full_price_list": "Lis pri yo",
     "svc_index_title": "Sèvis enspeksyon kay nan Miami ak Sid Florid",
@@ -552,8 +552,8 @@ T_HT = {
     "pricing_meta": "Pri enspeksyon kay selon pye kare apati $325. Mitigasyon van ak 4 pwen $150 chak. Enspeksyon ak tès mwazi $375 ak laboratwa.",
     "pricing_h1": "Pri enspeksyon yo", "pricing_lede": "Pri klè anvan w rezève. Pa gen frè kache.", "pricing_faq_h2": "Kesyon sou pri",
     "contact_title": "Rezève yon enspeksyon kay",
-    "contact_meta": "Rezève yon enspeksyon kay, mitigasyon van, 4 pwen oswa tès mwazi nan Sid Florid. N ap konfime nan mwens pase 2 èdtan.",
-    "contact_h1": "Rezève yon enspeksyon", "contact_lede": "Voye enfòmasyon w epi n ap konfime nan mwens pase 2 èdtan.",
+    "contact_meta": "Rezève yon enspeksyon kay, mitigasyon van, 4 pwen oswa tès mwazi nan Sid Florid. N ap konfime nan mwens pase 30 minit.",
+    "contact_h1": "Rezève yon enspeksyon", "contact_lede": "Voye enfòmasyon w epi n ap konfime nan mwens pase 30 minit.",
     "f_first": "Non", "f_last": "Siyati", "f_phone": "Telefòn", "f_email": "Imèl", "f_address": "Adrès kay la",
     "f_service": "Sèvis", "f_sqft": "Pye kare", "f_date": "Dat ou prefere", "f_source": "Kijan ou jwenn nou?",
     "sources": ["Google", "Thumbtack", "Ajan imobilye", "Ajan asirans", "Zanmi oswa fanmi", "Lòt"],
@@ -643,6 +643,10 @@ def _crumbs(l, items):
 def _bc_ld(l, items):
     return B.breadcrumb_ld(items, home=T[l]["home"], home_href=BASE[l]["root"])
 
+def _strip(l):
+    t = T[l]
+    return B.cta_strip(t["cta_h"], t["cta_p"], btn=t["strip_btn"], call=t["strip_call"].format(phone=PHONE), href=BASE[l]["contact"])
+
 def _cta(l, text=None):
     t = T[l]
     return B.cta_band(text or t["cta_h"], t["cta_p"], btn=t["cta_btn"], call=t["cta_call"].format(phone=PHONE), href=BASE[l]["contact"])
@@ -701,12 +705,12 @@ def build_home(l):
 
 <section class="bg-white"><div class="wrap">
 <p class="kicker">{t["services_kicker"]}</p><h2>{t["services_h2"]}</h2>
-<div style="margin-top:32px">{svc_cards(l)}</div></div></section>
+<div style="margin-top:32px">{svc_cards(l)}</div></div>{_strip(l)}</section>
 {badge_strip(t["badges_kicker"], t["badges_h2"].format(n=len(CERTS) - 3), t["badges_more"].format(n=len(CERTS)))}
 
 <section><div class="wrap">
 <p class="kicker">{t["pricing_kicker"]}</p><h2>{t["pricing_h2"]}</h2>
-<div style="margin-top:32px">{pricing_block(l)}</div></div></section>
+<div style="margin-top:32px">{pricing_block(l)}</div></div>{_strip(l)}</section>
 
 <section class="bg-white"><div class="wrap">
 <p class="kicker">{t["mold_kicker"]}</p><h2>{mold["h1"]}</h2>
@@ -717,7 +721,7 @@ def build_home(l):
 
 <section><div class="wrap">
 <p class="kicker">{t["reviews_kicker"]}</p><h2>{t["reviews_h2"].format(n=TOTAL_REVIEWS)}</h2>
-<div style="margin-top:28px">{reviews_block(l)}</div></div></section>
+<div style="margin-top:28px">{reviews_block(l)}</div></div>{_strip(l)}</section>
 
 <section class="bg-white"><div class="wrap">
 <p class="kicker">{t["steps_kicker"]}</p><h2>{t["steps_h2"]}</h2>

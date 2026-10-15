@@ -141,3 +141,20 @@ form.book textarea{min-height:110px}
 .bg-white .cert{background:var(--cream)}
 .stats strong .st{display:inline;margin:0;font-size:.8em;color:var(--star);letter-spacing:0;text-transform:none}
 @media (max-width:560px){.stats strong{font-size:20px}.stats span{font-size:13px}}
+/* booking strips */
+.cta-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background:var(--navy);color:#fff;border-radius:14px;padding:26px 30px;margin-top:44px;border-left:6px solid var(--green)}
+.cta-strip-text strong{display:block;font-family:Montserrat,"DM Sans",sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+.cta-strip-text span{display:block;margin-top:4px;font-size:18px;color:#fff}
+.cta-strip-btns{display:flex;flex-wrap:wrap;gap:12px}
+/* mobile sticky book/call bar */
+.mobile-bar{display:none}
+@media (max-width:900px){
+.mobile-bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:30;box-shadow:0 -4px 16px rgba(0,0,0,.18)}
+.mobile-bar a{display:block;text-align:center;padding:16px 8px calc(16px + env(safe-area-inset-bottom));font-weight:700;font-size:18px;text-decoration:none;color:#fff}
+.mobile-bar .mb-call{background:var(--navy)}
+.mobile-bar .mb-book{background:var(--green)}
+body{padding-bottom:64px}
+.cta-strip{padding:22px 20px}
+.cta-strip-btns,.cta-strip-btns .btn{width:100%;text-align:center}
+}
+.nw{white-space:nowrap}
