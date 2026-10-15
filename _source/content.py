@@ -426,5 +426,5 @@ def badge_strip(heading, sub, more_text, more_href="/certifications/"):
 <p style="margin-top:20px"><a class="more" href="{more_href}">{more_text} →</a></p></div></section>'''
 
 def footer_seals():
-    return (f'<div class="seals"><a href="{NACHI_VERIFY}" target="_blank" rel="noopener"><img src="https://www.nachi.org/webseals/sb-v2-{NACHI_ID}.gif" width="98" height="102" alt="Certified by the International Association of Certified Home Inspectors" loading="lazy"></a>'
-            f'<a href="{NACHI_VERIFY}" target="_blank" rel="noopener"><img src="https://www.nachi.org/webseals/internachi-honor-guarantee.png?nachiid={NACHI_ID}" width="102" height="102" alt="$25,000 Honor Guarantee, Backed by InterNACHI" loading="lazy"></a></div>')
+    return (f'<div class="seals"><a class="seal-cpi" href="{NACHI_VERIFY}" target="_blank" rel="noopener"><img src="/assets/brand/seals/seal.gif" width="98" height="102" alt="Certified by the International Association of Certified Home Inspectors" loading="lazy"></a>'
+            f'<a class="seal-honor" href="https://www.nachi.org/honor.htm" target="_blank" rel="noopener"><img src="/assets/brand/seals/honor.png" width="102" height="102" alt="$25,000 Honor Guarantee, Backed by InterNACHI" loading="lazy"></a></div>')
