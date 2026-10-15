@@ -660,6 +660,7 @@ def reviews_block(l):
 <a class="rating" href="{GOOGLE_PROFILE}"><strong>{GOOGLE_RATING}</strong><span><b>Google</b><small>{t["google_sub"].format(n=GOOGLE_COUNT)}</small></span></a>
 <a class="rating" href="{THUMBTACK_PROFILE}"><strong>{THUMBTACK_RATING}</strong><span><b>Thumbtack</b><small>{t["tt_sub"].format(n=THUMBTACK_COUNT)}</small></span></a>
 </div>
+{review_feed()}
 <div class="btn-row"><a class="btn btn-dark" href="{GOOGLE_REVIEW_LINK}">{t["leave_review"]}</a></div>'''
 
 def svc_cards(l, exclude=None):

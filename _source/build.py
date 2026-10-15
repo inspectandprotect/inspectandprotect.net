@@ -191,8 +191,7 @@ def reviews_block():
 <a class="rating" href="{GOOGLE_PROFILE}"><strong>{GOOGLE_RATING}</strong><span><b>Google</b><small>{GOOGLE_COUNT} reviews · all five-star · read them on Google</small></span></a>
 <a class="rating" href="{THUMBTACK_PROFILE}"><strong>{THUMBTACK_RATING}</strong><span><b>Thumbtack</b><small>{THUMBTACK_COUNT} reviews · Top Pro · read them on Thumbtack</small></span></a>
 </div>
-<!-- REVIEW FEED: paste the Google/Thumbtack review widget embed code inside this div -->
-<div id="review-feed" style="margin-top:24px"></div>
+{review_feed()}
 <div class="btn-row"><a class="btn btn-dark" href="{GOOGLE_REVIEW_LINK}">Leave us a Google review</a></div>'''
 
 def services_cards(exclude=None):

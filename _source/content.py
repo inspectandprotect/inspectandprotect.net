@@ -10,6 +10,16 @@ GOOGLE_REVIEW_LINK = "https://g.page/r/CTqILax4Rx4oEAE/review"
 GOOGLE_PROFILE = "https://www.google.com/maps/place/Inspect+and+Protect/data=!4m2!3m1!1s0x4596fce8a6206f13:0x281e4778ac2d883a"
 THUMBTACK_PROFILE = "https://www.thumbtack.com/fl/miami/home-inspection/inspect-protect/service/579292427917369353"
 
+# Poper review widget (free plan: 1 widget). Google Reviews widget id 13726.
+POPER_ACCOUNT = "ef7de61f7cb81527786b9c5f35a6bdd5"
+POPER_GOOGLE_WIDGET = "13726"
+POPER_SNIPPET = (f'<script id="poper-js-script" data-account-id="{POPER_ACCOUNT}" data-domain="inspectandprotect.net" '
+                 f'src="https://app.poper.ai/share/poper.js?accountID={POPER_ACCOUNT}" defer></script>'
+                 f'<script>window.Poper=window.Poper||[];window.Poper.push({{accountID:"{POPER_ACCOUNT}",domain:"inspectandprotect.net"}});</script>')
+
+def review_feed():
+    return f'<div class="review-feed">{POPER_SNIPPET}<div class="poper-{POPER_GOOGLE_WIDGET}"></div></div>'
+
 GOOGLE_RATING, GOOGLE_COUNT = "5.0", 12
 THUMBTACK_RATING, THUMBTACK_COUNT = "5.0", 29
 TOTAL_REVIEWS = GOOGLE_COUNT + THUMBTACK_COUNT
