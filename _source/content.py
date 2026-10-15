@@ -6,6 +6,12 @@ EMAIL = "nicholas@inspectandprotect.net"
 DOMAIN = "https://www.inspectandprotect.net"
 LICENSE = "HI18768"
 FORMSPREE = "https://formspree.io/f/meenlplp"
+CALENDLY = "https://calendly.com/nicholas-inspectandprotect/inspection"
+CALENDLY_EMBED = CALENDLY + "?hide_gdpr_banner=1&primary_color=c9922a&text_color=0d1f35"
+def calendly_inline():
+    return (f'<div class="calendly-inline-widget" data-url="{CALENDLY_EMBED}" style="min-width:300px;height:1050px"></div>'
+            '<script src="https://assets.calendly.com/assets/external/widget.js" async></script>'
+            f'<noscript><p><a class="btn btn-gold" href="{CALENDLY}">Open the booking calendar</a></p></noscript>')
 GOOGLE_REVIEW_LINK = "https://g.page/r/CTqILax4Rx4oEAE/review"
 GOOGLE_PROFILE = "https://www.google.com/maps/place/Inspect+and+Protect/data=!4m2!3m1!1s0x4596fce8a6206f13:0x281e4778ac2d883a"
 THUMBTACK_PROFILE = "https://www.thumbtack.com/fl/miami/home-inspection/inspect-protect/service/579292427917369353"

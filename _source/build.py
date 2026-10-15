@@ -343,8 +343,15 @@ def build_reviews():
 def build_contact():
     opts = "".join(f"<option>{strip_tags(s['nav'])}</option>" for s in SERVICES) + "<option>Multiple services</option>"
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None,"Book")])}
-<h1>Book an inspection</h1><p class="lede">Send your details and we'll confirm within 2 hours. Prefer to talk? Call or text <a href="tel:{PHONE_TEL}" style="color:#fff">{PHONE}</a>.</p></div></section>
-<section class="bg-white"><div class="wrap narrow">
+<h1>Book an inspection</h1><p class="lede">Pick your date and arrival time below; it goes straight onto our calendar. Prefer to talk? Call or text <a href="tel:{PHONE_TEL}" style="color:#fff">{PHONE}</a>.</p></div></section>
+<section class="bg-white" id="calendar"><div class="wrap narrow">
+<p class="kicker">Book online</p><h2>Choose a date and time</h2>
+<p class="note" style="font-size:15px">Open slots are Monday to Saturday. Inspections take 1 to 2 hours on site; you get the full report with photos the same day. Payment by Zelle, cash or check.</p>
+{calendly_inline()}
+</div></section>
+<section><div class="wrap narrow" id="request">
+<p class="kicker">Or send a request</p><h2>Don't see a time that works?</h2>
+<p class="note" style="font-size:15px;margin-bottom:20px">Send your details and we'll call or text you within 2 hours to find a time.</p>
 <form class="book" action="{FORMSPREE}" method="POST">
 <input type="hidden" name="_subject" value="New inspection request – inspectandprotect.net">
 <label>First name<input name="first_name" required autocomplete="given-name"></label>
@@ -360,7 +367,7 @@ def build_contact():
 <div class="full"><button class="btn btn-gold" type="submit">Request my inspection →</button>
 <p class="note">The inspection agreement is signed before the visit; signing locks in your date and time.</p></div>
 </form></div></section>'''
-    page("/contact/", "Book a Home Inspection", "Book a home inspection, wind mitigation, 4-point or mold test in South Florida. We confirm within 2 hours.", body)
+    page("/contact/", "Book a Home Inspection", "Book a home inspection, wind mitigation, 4-point or mold test in South Florida online. Pick your date and time, Monday to Saturday.", body)
 
 # ================================================================ AREAS
 def build_areas():

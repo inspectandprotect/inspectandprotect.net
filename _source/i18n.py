@@ -285,6 +285,7 @@ T_ES = {
     "f_service": "Servicio", "f_sqft": "Pies cuadrados", "f_date": "Fecha preferida", "f_source": "¿Cómo nos encontró?",
     "sources": ["Google", "Thumbtack", "Agente de bienes raíces", "Agente de seguros", "Amigo o familiar", "Otro"],
     "f_notes": "¿Algo que debamos saber?", "f_submit": "Solicitar mi inspección →", "f_multiple": "Varios servicios",
+    "cal_h": "Reserve en línea", "cal_p": "Elija la fecha y la hora en nuestro calendario (de lunes a sábado). El calendario está en inglés; solo toma un minuto.", "cal_btn": "Abrir el calendario", "form_h": "¿Prefiere que le llamemos?",
     "f_note": "El acuerdo de inspección se firma antes de la visita; al firmarlo, su fecha y hora quedan confirmadas.",
     "f_subject": "Nueva solicitud (Español) – inspectandprotect.net", "lang_value": "Español",
     "areas_title": "Áreas de servicio: Miami-Dade, Broward y Palm Beach",
@@ -557,6 +558,7 @@ T_HT = {
     "f_service": "Sèvis", "f_sqft": "Pye kare", "f_date": "Dat ou prefere", "f_source": "Kijan ou jwenn nou?",
     "sources": ["Google", "Thumbtack", "Ajan imobilye", "Ajan asirans", "Zanmi oswa fanmi", "Lòt"],
     "f_notes": "Èske gen yon bagay nou ta dwe konnen?", "f_submit": "Mande enspeksyon mwen →", "f_multiple": "Plizyè sèvis",
+    "cal_h": "Rezève sou entènèt", "cal_p": "Chwazi dat ak lè a sou kalandriye nou an (lendi rive samdi). Kalandriye a an angle; li pran yon minit sèlman.", "cal_btn": "Louvri kalandriye a", "form_h": "Ou pito nou rele w?",
     "f_note": "Ou siyen akò enspeksyon an anvan vizit la; lè w siyen, dat ak lè w la konfime.",
     "f_subject": "Nouvo demann (Kreyòl) – inspectandprotect.net", "lang_value": "Kreyòl",
     "areas_title": "Zòn nou sèvi: Miami-Dade, Broward ak Palm Beach",
@@ -778,6 +780,8 @@ def build_contact(l):
     body = f'''<section class="page-hero on-dark"><div class="wrap">{_crumbs(l, [(None, t["nav_book"])])}
 <h1>{t["contact_h1"]}</h1><p class="lede">{t["contact_lede"]}</p><p class="lang-note">{t["lang_note"]}</p></div></section>
 <section class="bg-white"><div class="wrap narrow">
+<div class="callout" style="margin-bottom:40px"><div><h2 style="font-size:28px">{t["cal_h"]}</h2><p class="note" style="font-size:15px;margin:8px 0 0">{t["cal_p"]}</p></div><a class="btn btn-gold" href="{CALENDLY}" target="_blank" rel="noopener">{t["cal_btn"]} →</a></div>
+<h2 style="font-size:28px;margin-bottom:16px">{t["form_h"]}</h2>
 <form class="book" action="{FORMSPREE}" method="POST">
 <input type="hidden" name="_subject" value="{t["f_subject"]}">
 <input type="hidden" name="language" value="{t["lang_value"]}">
