@@ -479,3 +479,8 @@ def badge_strip(heading, sub, more_text, more_href="/certifications/"):
 def footer_seals():
     return (f'<div class="seals"><a class="seal-cpi" href="{NACHI_VERIFY}" target="_blank" rel="noopener"><img src="/assets/brand/seals/seal.gif" width="98" height="102" alt="Certified by the International Association of Certified Home Inspectors" loading="lazy"></a>'
             f'<a class="seal-honor" href="https://www.nachi.org/honor.htm" target="_blank" rel="noopener"><img src="/assets/brand/seals/honor.png" width="102" height="102" alt="$25,000 Honor Guarantee, Backed by InterNACHI" loading="lazy"></a></div>')
+
+# Google Ads tag (account 739-671-0872) + booking conversion fired when Calendly reports a scheduled event.
+GADS_JS = """<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18371170476"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-18371170476');
+window.addEventListener('message',function(e){try{if(e.origin.indexOf('calendly.com')>-1&&e.data&&e.data.event==='calendly.event_scheduled'){gtag('event','conversion',{'send_to':'AW-18371170476/WzEECKP9rKEdEKyhh7hE','value':350.0,'currency':'USD'})}}catch(x){}});</script>"""
