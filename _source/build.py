@@ -22,8 +22,19 @@ def lang_switch(path, lang):
         out.append(f'<a href="{href}" hreflang="{l}" lang="{l}"{cur}>{label}</a>')
     return '<nav class="langs" aria-label="Language">' + "".join(out) + "</nav>"
 
-def topbar(path, lang, call_label):
-    return f'<div class="topbar"><div class="wrap"><span>{call_label} <a href="tel:{PHONE_TEL}">{PHONE}</a></span>{lang_switch(path, lang)}</div></div>'
+PHONE_SVG = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>'
+MAIL_SVG = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5z"/></svg>'
+EMAIL_LABEL = {"en": "Email Us", "es": "Enviar correo", "ht": "Voye imèl"}
+CALL_LABEL = {"en": "Call", "es": "Llamar", "ht": "Rele"}
+
+def contact_btns(lang="en", cls="btn btn-line"):
+    return (f'<a class="{cls}" href="tel:{PHONE_TEL}">{PHONE_SVG}{CALL_LABEL[lang]} <span class="nw">{PHONE}</span></a>'
+            f'<a class="{cls}" href="mailto:{EMAIL}">{MAIL_SVG}{EMAIL_LABEL[lang]}</a>')
+
+def topbar(path, lang, call_label=None):
+    return (f'<div class="topbar"><div class="wrap"><span class="tb-contact">'
+            f'<a class="tb-btn" href="tel:{PHONE_TEL}">{PHONE_SVG}<span class="nw">{PHONE}</span></a>'
+            f'<a class="tb-btn" href="mailto:{EMAIL}" aria-label="{EMAIL_LABEL[lang]}">{MAIL_SVG}<span class="tb-lbl">{EMAIL_LABEL[lang]}</span></a></span>{lang_switch(path, lang)}</div></div>')
 
 def esc_attr(s):
     return s.replace('"', "&quot;")
@@ -160,29 +171,27 @@ def faq_ld(faq):
 def faq_html(faq):
     return "".join(f'<details class="faq"><summary>{q}</summary><p>{a}</p></details>' for q, a in faq)
 
-def cta_band(text="Ready to book?", sub="Call, text or book online. We confirm within 30 minutes.",
-             btn="Book an Inspection", call=None, href="/contact/"):
-    call = call or f"Call {PHONE}"
+def cta_band(text="Ready to book?", sub="Call, email or book online. We confirm within 30 minutes.",
+             btn="Book an Inspection", call=None, href="/contact/", lang="en"):
     return f'''<section class="bg-navy on-dark"><div class="wrap">
 <h2>{text}</h2><p class="lede">{sub}</p>
-<div class="btn-row"><a class="btn btn-gold" href="{href}">{btn}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">{call}</a></div>
+<div class="btn-row"><a class="btn btn-gold" href="{href}">{btn}</a>{contact_btns(lang)}</div>
 </div></section>'''
 
-def cta_strip(text="Ready to book?", sub="Call, text or book online. We confirm within 30 minutes.",
-              btn="Book Online", call=None, href="/contact/"):
-    call = (call or f"Call or Text {PHONE}").replace(PHONE, f'<span class="nw">{PHONE}</span>')
+def cta_strip(text="Ready to book?", sub="Call, email or book online. We confirm within 30 minutes.",
+              btn="Book Online", call=None, href="/contact/", lang="en"):
     return f'''<div class="wrap"><div class="cta-strip">
 <div class="cta-strip-text"><strong>{text}</strong><span>{sub}</span></div>
-<div class="cta-strip-btns"><a class="btn btn-gold" href="{href}">{btn}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">{call}</a></div>
+<div class="cta-strip-btns"><a class="btn btn-gold" href="{href}">{btn}</a>{contact_btns(lang)}</div>
 </div></div>'''
 
-MOBILE_BAR = {"en": ("Book Online", "Call / Text", "/contact/"),
-              "es": ("Reservar", "Llamar / Texto", "/es/reservar/"),
-              "ht": ("Rezève", "Rele / Tèks", "/ht/rezeve/")}
+MOBILE_BAR = {"en": ("Book Online", "/contact/"), "es": ("Reservar", "/es/reservar/"), "ht": ("Rezève", "/ht/rezeve/")}
 
 def mobile_bar(lang="en"):
-    book, call, href = MOBILE_BAR.get(lang, MOBILE_BAR["en"])
-    return f'<nav class="mobile-bar" aria-label="Book or call"><a class="mb-call" href="tel:{PHONE_TEL}">{call}</a><a class="mb-book" href="{href}">{book}</a></nav>'
+    book, href = MOBILE_BAR.get(lang, MOBILE_BAR["en"])
+    return (f'<nav class="mobile-bar" aria-label="Call, email or book"><a class="mb-call" href="tel:{PHONE_TEL}">{PHONE_SVG}{CALL_LABEL[lang]}</a>'
+            f'<a class="mb-mail" href="mailto:{EMAIL}">{MAIL_SVG}{EMAIL_LABEL[lang].split()[0] if lang=="en" else EMAIL_LABEL[lang].split()[-1].capitalize()}</a>'
+            f'<a class="mb-book" href="{href}">{book}</a></nav>')
 
 def rows(items):
     out = ""
@@ -371,7 +380,7 @@ def build_reviews():
 def build_contact():
     opts = "".join(f"<option>{strip_tags(s['nav'])}</option>" for s in SERVICES) + "<option>Multiple services</option>"
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None,"Book")])}
-<h1>Book an inspection</h1><p class="lede">Pick your date and arrival time below; it goes straight onto our calendar. Prefer to talk? Call or text <a href="tel:{PHONE_TEL}" style="color:#fff">{PHONE}</a>.</p></div></section>
+<h1>Book an inspection</h1><p class="lede">Pick your date and arrival time below; it goes straight onto our calendar. Prefer to talk? Call <a href="tel:{PHONE_TEL}" style="color:#fff">{PHONE}</a> or email <a href="mailto:{EMAIL}" style="color:#fff">{EMAIL}</a>.</p></div></section>
 <section class="bg-white" id="calendar"><div class="wrap narrow">
 <p class="kicker">Book online</p><h2>Choose a date and time</h2>
 <p class="note" style="font-size:15px">Open slots are Monday to Saturday. Inspections take 1 to 2 hours on site; you get the full report with photos the same day. Payment by Zelle, cash or check.</p>
@@ -379,7 +388,7 @@ def build_contact():
 </div></section>
 <section><div class="wrap narrow" id="request">
 <p class="kicker">Or send a request</p><h2>Don't see a time that works?</h2>
-<p class="note" style="font-size:15px;margin-bottom:20px">Send your details and we'll call or text you within 30 minutes to find a time.</p>
+<p class="note" style="font-size:15px;margin-bottom:20px">Send your details and we'll get back to you within 30 minutes to find a time.</p>
 <form class="book" action="{FORMSPREE}" method="POST">
 <input type="hidden" name="_subject" value="New inspection request – inspectandprotect.net">
 <label>First name<input name="first_name" required autocomplete="given-name"></label>
@@ -421,7 +430,7 @@ def build_areas():
         body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([("/areas/","Areas"),(None,name)])}
 <p class="kicker">{county} County</p><h1>Home Inspector in {name}, FL</h1>
 <p class="lede">Licensed Home Inspections, Wind Mitigation, 4-Point Inspections and Mold Testing in {name}, with same-day reports.</p>
-<div class="btn-row"><a class="btn btn-gold" href="/contact/">Book in {name}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">Call {PHONE}</a></div></div></section>
+<div class="btn-row"><a class="btn btn-gold" href="/contact/">Book in {name}</a>{contact_btns()}</div></div></section>
 <section class="bg-white"><div class="wrap narrow prose">
 <h2>Inspecting homes in {name}</h2><p>{intro}</p><p>{note}</p>
 <p>Every inspection includes moisture meter readings and thermal imaging, and your report with photos arrives the same day. We hold Florida Home Inspector License #{LICENSE} and are InterNACHI certified.</p>
@@ -478,7 +487,7 @@ def build_service_cities():
             body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([("/areas/","Areas"),(f"/areas/{city}/",name),(None,SHORT[svc])])}
 <p class="kicker">{county} County · {s["price_from"]}</p><h1>{SHORT[svc]} in {name}, FL</h1>
 <p class="lede">{strip_tags(s["lede"])}</p>
-<div class="btn-row"><a class="btn btn-gold" href="/contact/">Book in {name}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">Call {PHONE}</a></div></div></section>
+<div class="btn-row"><a class="btn btn-gold" href="/contact/">Book in {name}</a>{contact_btns()}</div></div></section>
 <section class="bg-white"><div class="wrap narrow prose"><h2>{SHORT[svc]} for {name} homes</h2><p>{intro} {note}</p>{paras}{note_html}</div></section>
 <section><div class="wrap"><h2>What we check</h2><div class="grid" style="margin-top:24px">{covers}</div></div></section>
 <section class="bg-white"><div class="wrap narrow"><h2>{name} {strip_tags(SHORT[svc]).lower()} questions</h2><div style="margin-top:16px">{faq_html(faq)}</div>

@@ -230,7 +230,7 @@ SVC_ES = {
 T_ES = {
     "home": "Inicio", "menu": "Menú", "call": "Llamar", "call_or_text": "Llame o escriba",
     "nav_services": "Servicios", "nav_pricing": "Precios", "nav_mold": "Prueba de moho", "nav_areas": "Áreas", "nav_book": "Reservar",
-    "lang_note": "Los informes se entregan en inglés. Escríbanos por texto en español y le responderemos con ayuda de traducción.",
+    "lang_note": "Los informes se entregan en inglés. Envíenos un correo en español y le responderemos con ayuda de traducción.",
     "hero_kicker": f"Inspector de viviendas con licencia de la Florida · {LICENSE}",
     "hero_h1": "Inspecciones de viviendas certificadas.<br><em>Informes el mismo día.</em>",
     "hero_lede": "Inspecciones de viviendas, mitigación de vientos, 4 puntos y pruebas de moho en Miami-Dade, Broward y Palm Beach, con precios claros desde el principio.",
@@ -267,7 +267,7 @@ T_ES = {
               ("PASO 4", "Informe el mismo día", "Fotos, hallazgos y explicaciones claras, entregados ese mismo día.")],
     "areas_kicker": "Áreas", "areas_h2": "Miami-Dade, Broward y Palm Beach",
     "faq_kicker": "Preguntas frecuentes", "faq_h2": "Preguntas comunes",
-    "cta_h": "¿Listo para reservar?", "cta_p": "Llame, escriba o reserve en línea. Confirmamos en menos de 30 minutos.",
+    "cta_h": "¿Listo para reservar?", "cta_p": "Llame, envíe un correo o reserve en línea. Confirmamos en menos de 30 minutos.",
     "cta_btn": "Reservar inspección", "cta_call": "Llamar al {phone}", "strip_btn": "Reservar en línea", "strip_call": "Llame o escriba al {phone}",
     "what_we_check": "Qué revisamos", "questions": "Preguntas", "other_services": "Otros servicios", "areas_we_serve": "Áreas que servimos",
     "book_from": "Reservar · desde {p}", "full_price_list": "Lista de precios",
@@ -315,7 +315,7 @@ T_ES = {
         ("¿Cuánto cuesta una inspección de vivienda?", "Las inspecciones empiezan en $325 para condominios y casas de menos de 1,200 pies cuadrados y se calculan según el tamaño. La mitigación de vientos y la inspección de 4 puntos cuestan $150 cada una."),
         ("¿Cuánto dura una inspección?", "La mayoría toma de 1 a 2 horas según el tamaño y el estado de la casa. Puede acompañarnos."),
         ("¿Cuándo recibo el informe?", "Los informes y las fotos se entregan el mismo día. Los informes están en inglés."),
-        ("¿En qué idioma me atienden?", "Hablamos inglés. Puede escribirnos por texto en español y le responderemos con ayuda de traducción."),
+        ("¿En qué idioma me atienden?", "Hablamos inglés. Puede enviarnos un correo en español y le responderemos con ayuda de traducción."),
         ("¿Tienen licencia y seguro?", f"Sí. Somos inspectores de viviendas con licencia de la Florida (#{LICENSE}), certificados por InterNACHI, con seguro de errores y omisiones y de responsabilidad civil."),
     ],
     "pricing_faq": [
@@ -503,7 +503,7 @@ SVC_HT = {
 T_HT = {
     "home": "Akèy", "menu": "Meni", "call": "Rele", "call_or_text": "Rele oswa voye tèks",
     "nav_services": "Sèvis", "nav_pricing": "Pri", "nav_mold": "Tès mwazi", "nav_areas": "Zòn", "nav_book": "Rezève",
-    "lang_note": "Rapò yo ekri an anglè. Voye yon tèks ban nou an kreyòl, epi n ap reponn ou avèk èd tradiksyon.",
+    "lang_note": "Rapò yo ekri an anglè. Voye yon imèl ban nou an kreyòl, epi n ap reponn ou avèk èd tradiksyon.",
     "hero_kicker": f"Enspektè kay ki gen lisans Florid · {LICENSE}",
     "hero_h1": "Enspeksyon kay sètifye.<br><em>Rapò menm jou a.</em>",
     "hero_lede": "Enspeksyon kay, mitigasyon van, 4 pwen ak tès mwazi nan Miami-Dade, Broward ak Palm Beach, ak pri klè depi okòmansman.",
@@ -540,7 +540,7 @@ T_HT = {
               ("ETAP 4", "Rapò menm jou a", "Foto, rezilta ak eksplikasyon klè, menm jou a.")],
     "areas_kicker": "Zòn", "areas_h2": "Miami-Dade, Broward ak Palm Beach",
     "faq_kicker": "Kesyon", "faq_h2": "Kesyon moun poze souvan",
-    "cta_h": "Ou pare pou rezève?", "cta_p": "Rele, voye tèks oswa rezève sou entènèt. N ap konfime nan mwens pase 30 minit.",
+    "cta_h": "Ou pare pou rezève?", "cta_p": "Rele, voye imèl oswa rezève sou entènèt. N ap konfime nan mwens pase 30 minit.",
     "cta_btn": "Rezève yon enspeksyon", "cta_call": "Rele {phone}", "strip_btn": "Rezève sou entènèt", "strip_call": "Rele oswa tèks {phone}",
     "what_we_check": "Sa nou tcheke", "questions": "Kesyon", "other_services": "Lòt sèvis", "areas_we_serve": "Zòn nou sèvi",
     "book_from": "Rezève · apati {p}", "full_price_list": "Lis pri yo",
@@ -588,7 +588,7 @@ T_HT = {
         ("Konbyen yon enspeksyon kay koute?", "Enspeksyon kay kòmanse a $325 pou kondo ak kay ki gen mwens pase 1,200 pye kare, epi pri a monte selon gwosè kay la. Mitigasyon van ak enspeksyon 4 pwen koute $150 chak."),
         ("Konbyen tan yon enspeksyon pran?", "Pifò pran 1 a 2 èdtan selon gwosè ak kondisyon kay la. Ou ka vin avè nou."),
         ("Kilè m ap resevwa rapò a?", "Nou voye rapò ak foto yo menm jou a. Rapò yo ekri an anglè."),
-        ("Nan ki lang nou pale?", "Nou pale anglè. Ou ka voye tèks ban nou an kreyòl, epi n ap reponn ou avèk èd tradiksyon."),
+        ("Nan ki lang nou pale?", "Nou pale anglè. Ou ka voye yon imèl ban nou an kreyòl, epi n ap reponn ou avèk èd tradiksyon."),
         ("Èske nou gen lisans ak asirans?", f"Wi. Nou se enspektè kay ki gen lisans Florid (#{LICENSE}), sètifye pa InterNACHI, ak asirans erè ak omisyon ak asirans responsablite sivil."),
     ],
     "pricing_faq": [
@@ -645,11 +645,11 @@ def _bc_ld(l, items):
 
 def _strip(l):
     t = T[l]
-    return B.cta_strip(t["cta_h"], t["cta_p"], btn=t["strip_btn"], call=t["strip_call"].format(phone=PHONE), href=BASE[l]["contact"])
+    return B.cta_strip(t["cta_h"], t["cta_p"], btn=t["strip_btn"], href=BASE[l]["contact"], lang=l)
 
 def _cta(l, text=None):
     t = T[l]
-    return B.cta_band(text or t["cta_h"], t["cta_p"], btn=t["cta_btn"], call=t["cta_call"].format(phone=PHONE), href=BASE[l]["contact"])
+    return B.cta_band(text or t["cta_h"], t["cta_p"], btn=t["cta_btn"], href=BASE[l]["contact"], lang=l)
 
 def pricing_block(l):
     t = T[l]
@@ -832,7 +832,7 @@ def build_areas(l):
         body = f'''<section class="page-hero on-dark"><div class="wrap">{_crumbs(l, [(BASE[l]["areas"], t["nav_areas"]), (None, name)])}
 <p class="kicker">{t["county"].format(c=county)}</p><h1>{t["city_h1"].format(name=name)}</h1>
 <p class="lede">{t["city_lede"].format(name=name)}</p>
-<div class="btn-row"><a class="btn btn-gold" href="{BASE[l]["contact"]}">{t["city_book"].format(name=name)}</a><a class="btn btn-line" href="tel:{PHONE_TEL}">{t["cta_call"].format(phone=PHONE)}</a></div></div></section>
+<div class="btn-row"><a class="btn btn-gold" href="{BASE[l]["contact"]}">{t["city_book"].format(name=name)}</a>{B.contact_btns(l)}</div></div></section>
 <section class="bg-white"><div class="wrap narrow prose">
 <h2>{t["city_h2"].format(name=name)}</h2><p>{intro}</p><p>{note}</p><p>{t["city_std"]}</p><p class="note">{t["lang_note"]}</p>
 </div></section>
