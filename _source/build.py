@@ -16,10 +16,10 @@ def set_groups(groups):
 def lang_switch(path, lang):
     g = PATH2GROUP.get(path, {})
     out = []
-    for l, label in (("en", "EN"), ("es", "ES"), ("ht", "KREYÒL")):
+    for l, label, full in (("en", "EN", "English"), ("es", "ES", "Español"), ("ht", "HT", "Kreyòl ayisyen")):
         href = g.get(l, LANG_ROOTS[l])
         cur = ' aria-current="true"' if l == lang else ""
-        out.append(f'<a href="{href}" hreflang="{l}" lang="{l}"{cur}>{label}</a>')
+        out.append(f'<a href="{href}" hreflang="{l}" lang="{l}" title="{full}" aria-label="{full}"{cur}>{label}</a>')
     return '<nav class="langs" aria-label="Language">' + "".join(out) + "</nav>"
 
 PHONE_SVG = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>'
