@@ -175,3 +175,6 @@ body{padding-bottom:64px}
 @media (max-width:900px){.mobile-bar{grid-template-columns:1fr 1fr 1.25fr}.mobile-bar a{display:flex;align-items:center;justify-content:center;font-size:17px;padding-left:4px;padding-right:4px}.mobile-bar .mb-mail{background:#0c2643;border-left:1px solid rgba(255,255,255,.15);border-right:1px solid rgba(255,255,255,.15)}}
 @media (max-width:420px){.topbar .tb-btn{padding:4px 9px;font-size:13px}}
 @media (max-width:560px){.tb-contact{flex-wrap:nowrap}.topbar .tb-lbl{display:none}.topbar .tb-btn .ico{margin-right:0}.topbar .tb-btn:first-child .ico{margin-right:6px}}
+
+.video-frame{margin-top:28px;max-width:960px;border-radius:14px;overflow:hidden;background:#01172e;box-shadow:0 10px 30px rgba(1,23,46,.18);aspect-ratio:16/9}
+.video-frame video{display:block;width:100%;height:100%;background:#01172e}

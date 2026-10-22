@@ -264,6 +264,12 @@ def build_home():
 <div><strong>InterNACHI</strong><span>Certified inspector</span></div>
 </div></div></section>
 
+<section class="video-sec"><div class="wrap">
+<p class="kicker">Watch</p><h2>See what we check, in 90 seconds</h2>
+<div class="video-frame"><video controls playsinline preload="metadata" poster="/assets/media/inspect-and-protect-commercial.jpg" aria-label="Inspect and Protect video: home inspections, 4-point, wind mitigation and mold testing in South Florida, with captions">
+<source src="/assets/media/inspect-and-protect-commercial.mp4" type="video/mp4"></video></div>
+</div></section>
+
 <section class="bg-white"><div class="wrap">
 <p class="kicker">Services</p><h2>Everything a South Florida home needs inspected</h2>
 <div style="margin-top:32px">{services_cards()}</div>
@@ -312,7 +318,14 @@ def build_home():
 {cta_band()}'''
     page("/", "Home Inspector Miami &amp; South Florida | Inspect and Protect",
          f"Licensed Florida home inspector (HI18768) serving Miami-Dade, Broward and Palm Beach. Home inspections from $325, wind mitigation and 4-point $150, mold testing $375. Same-day reports. {TOTAL_REVIEWS} five-star reviews.",
-         body, [faq_ld(HOME_FAQ)])
+         body, [faq_ld(HOME_FAQ), VIDEO_LD])
+
+VIDEO_LD = {"@context": "https://schema.org", "@type": "VideoObject",
+    "name": "Inspect and Protect | Home Inspections in South Florida",
+    "description": "Home inspections, 4-point, wind mitigation and mold testing across Miami-Dade, Broward and Palm Beach. Book online at inspectandprotect.net or call (786) 562-0230.",
+    "thumbnailUrl": f"{DOMAIN}/assets/media/inspect-and-protect-commercial.jpg",
+    "contentUrl": f"{DOMAIN}/assets/media/inspect-and-protect-commercial.mp4",
+    "uploadDate": "2026-10-22", "duration": "PT1M26S"}
 
 HOME_FAQ = [
     ("How much does a home inspection cost?", "Home inspections start at $325 for condos and homes under 1,200 sq ft and are priced by size. Wind mitigation and 4-point inspections are $150 each. See the full price list on our pricing page."),
@@ -603,6 +616,7 @@ def build_static():
     shutil.copy(os.path.join(os.path.dirname(__file__), "style.css"), os.path.join(OUT, "assets", "style.css"))
     brand = os.path.join(os.path.dirname(__file__), "brand")
     shutil.copytree(brand, os.path.join(OUT, "assets", "brand"))
+    shutil.copytree(os.path.join(os.path.dirname(__file__), "media"), os.path.join(OUT, "assets", "media"))
     shutil.copy(os.path.join(brand, "shield.svg"), os.path.join(OUT, "favicon.svg"))
     shutil.copy(os.path.join(brand, "apple-touch-icon.png"), os.path.join(OUT, "apple-touch-icon.png"))
     with open(os.path.join(OUT, "robots.txt"), "w") as f:
