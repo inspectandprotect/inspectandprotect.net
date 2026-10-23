@@ -483,4 +483,5 @@ def footer_seals():
 # Google Ads tag (account 739-671-0872) + booking conversion fired when Calendly reports a scheduled event.
 GADS_JS = """<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18371170476"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-18371170476');
-window.addEventListener('message',function(e){try{if(e.origin.indexOf('calendly.com')>-1&&e.data&&e.data.event==='calendly.event_scheduled'){gtag('event','conversion',{'send_to':'AW-18371170476/WzEECKP9rKEdEKyhh7hE','value':350.0,'currency':'USD'})}}catch(x){}});</script>"""
+window.addEventListener('message',function(e){try{if(e.origin.indexOf('calendly.com')>-1&&e.data&&e.data.event==='calendly.event_scheduled'){gtag('event','conversion',{'send_to':'AW-18371170476/WzEECKP9rKEdEKyhh7hE','value':350.0,'currency':'USD'})}}catch(x){}});
+document.addEventListener('click',function(e){try{var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"]');if(a){gtag('event','conversion',{'send_to':'AW-18371170476/8oMECJm1p6cdEKyhh7hE','value':1.0,'currency':'USD'})}}catch(x){}},true);</script>"""
