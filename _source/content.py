@@ -34,6 +34,10 @@ THUMBTACK_PROFILE = "https://www.thumbtack.com/fl/miami/home-inspection/inspect-
 # Client reviews shown on the site, copied word for word from the Thumbtack profile.
 # src: "hired" = Hired on Thumbtack, "tt" = review on Thumbtack, "google" = Google review (also shown on Thumbtack)
 REVIEWS = [
+    ("Timo R.", "Oct 2026", "hired", "Home, 4-point &amp; wind mitigation",
+     "Very happy with this service. We got a full inspection including the 4point and wind inspection and are more than happy. Inspect &amp; protect really took a lot of time to explain everything, delivered a very detailed report in record time and communication was top notch."),
+    ("Jen P.", "Oct 2026", "hired", "Home inspection",
+     "Nicholas was on time, friendly, and very communicative throughout the process. He shared helpful pointers about improvements I could make to my home that may qualify for insurance credits. He took the time to explain everything and sent all the documents the same day. Great service—I would definitely recommend Inspect and Protect!"),
     ("Mrs. T.", "Aug 2026", "hired", "Home inspection",
      "My inspector was absolutely amazing! he was punctual, responsive, kind and quick with his report. He walked my husband and I through the home and showed us all the things he inspected. I would most definitely recommend him!"),
     ("Cesar J.", "May 2026", "hired", "Home inspection",
@@ -78,7 +82,7 @@ def review_feed():
     return f'<div class="review-feed">{"".join(cards)}</div>'
 
 GOOGLE_RATING, GOOGLE_COUNT = "5.0", 12
-THUMBTACK_RATING, THUMBTACK_COUNT = "5.0", 29
+THUMBTACK_RATING, THUMBTACK_COUNT = "5.0", 31
 TOTAL_REVIEWS = GOOGLE_COUNT + THUMBTACK_COUNT
 
 # ---------------------------------------------------------------- pricing
