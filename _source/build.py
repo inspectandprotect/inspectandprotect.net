@@ -325,7 +325,7 @@ VIDEO_LD = {"@context": "https://schema.org", "@type": "VideoObject",
     "description": "Home inspections, 4-point, wind mitigation and mold testing across Miami-Dade, Broward and Palm Beach. Book online at inspectandprotect.net or call (786) 562-0230.",
     "thumbnailUrl": f"{DOMAIN}/assets/media/inspect-and-protect-commercial.jpg",
     "contentUrl": f"{DOMAIN}/assets/media/inspect-and-protect-commercial.mp4",
-    "uploadDate": "2026-10-22", "duration": "PT1M26S"}
+    "uploadDate": "2026-10-22T12:00:00-04:00", "duration": "PT1M26S"}
 
 HOME_FAQ = [
     ("How much does a home inspection cost?", "Home inspections start at $325 for condos and homes under 1,200 sq ft and are priced by size. Wind mitigation and 4-point inspections are $150 each. See the full price list on our pricing page."),
