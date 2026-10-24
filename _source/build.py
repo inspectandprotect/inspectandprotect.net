@@ -63,7 +63,7 @@ BUSINESS_LD = {
     "founder": {"@type": "Person", "name": "Nicholas Figaro", "jobTitle": "Florida Licensed Home Inspector"},
     "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license",
                       "name": f"Florida Home Inspector License {LICENSE}"},
-    "sameAs": [GOOGLE_PROFILE, THUMBTACK_PROFILE, NACHI_PROFILE],
+    "sameAs": [GOOGLE_PROFILE, THUMBTACK_PROFILE, FACEBOOK_PROFILE, NACHI_PROFILE],
 }
 
 def nav_items():
@@ -91,7 +91,7 @@ def footer():
 <div class="footer-grid">
 <div><a class="logo" href="/"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a>
 <p>Licensed home inspections, insurance inspections and mold testing across Miami-Dade, Broward and Palm Beach.</p>
-<p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>{footer_seals()}</div>
+<p><a href="tel:{PHONE_TEL}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p><p><a class="social-link" href="{FACEBOOK_PROFILE}" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg><span>Follow us on Facebook</span></a></p>{footer_seals()}</div>
 <div><h4>Services</h4><ul>{svc}<li><a href="/pricing/">Pricing</a></li></ul></div>
 <div><h4>Areas</h4><ul>{areas}<li><a href="/areas/">All areas</a></li></ul></div>
 <div><h4>Company</h4><ul><li><a href="/reviews/">Reviews</a></li><li><a href="/sample-reports/">Sample reports</a></li><li><a href="/certifications/">Certifications</a></li><li><a href="/for-realtors/">For realtors</a></li><li><a href="/for-insurance-agents/">For insurance agents</a></li><li><a href="/resources/">Resources</a></li><li><a href="/contact/">Book an inspection</a></li></ul></div>

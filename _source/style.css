@@ -119,6 +119,7 @@ form.book textarea{min-height:110px}
 .site-footer{background:var(--navy-2);color:#eef2f6;padding:64px 0 32px;font-size:16px}
 .site-footer a{color:#e8e4df;text-decoration:none}
 .site-footer a:hover{color:var(--gold)}
+.site-footer .social-link{display:inline-flex;align-items:center;gap:8px}
 .site-footer h4{color:#fff;margin:0 0 10px;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
 .site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .footer-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
