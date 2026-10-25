@@ -317,6 +317,415 @@ SERVICE_CITY_SERVICES = ["home-inspection", "wind-mitigation", "4-point-inspecti
 # ---------------------------------------------------------------- articles
 ARTICLES = [
     {
+        "slug": "home-inspection-cost-florida",
+        "title": "How Much Does a Home Inspection Cost in Florida?",
+        "meta": "What a home inspection costs in Miami and South Florida, what changes the price, and what you should get for your money. Plus wind mitigation and four-point pricing.",
+        "summary": "Typical prices in South Florida, what changes the cost, and what should be included.",
+        "sections": [
+            ("The short answer", [
+                "In South Florida, most home inspections cost a few hundred dollars, and the biggest factor is the size of the home. A condo or a small home costs less than a large single-family house, because there is more to inspect and it takes longer.",
+                "Here's what we charge at Inspect and Protect, so you can see real numbers instead of a range:",
+                "<strong>Condo or home under 1,200 square feet:</strong> $325<br><strong>1,200 to 1,999 square feet:</strong> $395<br><strong>2,000 to 2,999 square feet:</strong> $475<br><strong>3,000 to 3,999 square feet:</strong> $550<br><strong>4,000 square feet and up:</strong> from $625",
+                "Wind mitigation and four-point inspections are $150 each on their own, and they cost less when you add them to a home inspection. You can see everything on our <a href='/pricing/'>pricing page</a>.",
+            ]),
+            ("What changes the price", [
+                "<strong>Square footage.</strong> More rooms, more bathrooms, more roof and more attic mean more time on site and a longer report.",
+                "<strong>Age of the home.</strong> Older homes often have more to document, such as older electrical panels, older plumbing and past repairs.",
+                "<strong>Add-ons.</strong> Wind mitigation, four-point and mold inspections are separate reports. Booking them in the same visit saves you a second appointment and gets your insurance paperwork done at the same time.",
+                "<strong>Location.</strong> A travel fee may apply outside Miami-Dade and Broward.",
+            ]),
+            ("What you should get for your money", [
+                "Price only tells you part of the story. Before you book any inspector, ask what's included. With us, every home inspection includes:",
+                "A full top-to-bottom inspection of the roof, attic, structure, electrical, plumbing, air conditioning, interior and exterior.",
+                "A moisture meter and a thermal imaging camera to find hidden leaks and moisture you can't see with your eyes.",
+                "A detailed digital report with photos, usually delivered the same day. You can see what that looks like in our <a href='/sample-reports/'>sample reports</a>.",
+                "A Florida licensed home inspector who answers your questions after the report is delivered.",
+            ]),
+            ("Is the cheapest inspection the best deal?", [
+                "Not always, and the most expensive isn't always the best either. What matters is that the inspector is licensed in Florida, the report is clear and complete, and you get it in time to use it during your inspection period. A missed roof leak or electrical problem can cost far more than the inspection itself.",
+                "Read the reviews, look at a sample report, and confirm the license before you book. You can <a href='/certifications/'>verify our license and certifications here</a>.",
+            ]),
+            ("Get a quote in minutes", [
+                "Tell us the address and the square footage, and we'll give you the exact price. Call or text, or book online and pick your date and time.",
+            ]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
+        "slug": "is-wind-mitigation-inspection-worth-it",
+        "title": "Is a Wind Mitigation Inspection Worth It in Florida?",
+        "meta": "Is a Florida wind mitigation inspection worth it? Which homes save the most, how to find an old wind mitigation report, and how long the form lasts.",
+        "summary": "Which homes save the most, how to find an old report, and how long it lasts.",
+        "sections": [
+            ("Why people ask", [
+                "Homeowners insurance in Florida is expensive, and the windstorm part of the premium is usually the biggest piece. A wind mitigation inspection documents the features of your home that help it stand up to hurricanes, and Florida law requires insurers to offer discounts for those features.",
+                "So the real question is simple: will the discounts be worth more than the cost of the inspection? For a lot of South Florida homes, the answer is yes, and the savings can repeat every year the form is on file.",
+            ]),
+            ("Homes that usually save the most", [
+                "<strong>Homes with impact windows and doors, or approved shutters on every opening.</strong> Opening protection is often where the biggest credit comes from.",
+                "<strong>Homes with a hip roof.</strong> A roof that slopes down on all four sides holds up better in wind than a gable roof.",
+                "<strong>Homes with roof-to-wall clips or straps.</strong> Clips and wraps that tie the roof to the walls usually earn more credit than plain nails.",
+                "<strong>Homes with a newer roof</strong> installed under the current building code, especially with a sealed underlayment, called secondary water resistance.",
+                "<strong>Newer homes</strong> built under the 2001 Florida Building Code or later.",
+                "If your home has one or more of these, a wind mitigation inspection is very likely worth it. Ask your insurance agent how much each feature is worth on your policy before you book. They can usually tell you.",
+            ]),
+            ("When it may not help much", [
+                "If your home has an older roof, gable ends, no clips and no opening protection, there may be less to document. Even then, the inspection can show you exactly which upgrade would earn you the most credit, which helps if you're planning a new roof or new windows.",
+            ]),
+            ("Already had one done? How to find it", [
+                "If the home had a wind mitigation inspection in the last five years, you may not need a new one. Here's where to look:",
+                "<strong>Ask your insurance agent.</strong> If a form was submitted for your policy, your agent or insurer should have it on file.",
+                "<strong>Ask the previous owner or your real estate agent.</strong> Sellers sometimes have a recent form, and it may still be valid for you.",
+                "<strong>Ask the inspector who did it.</strong> Inspectors keep copies of their reports and can often send one again.",
+                "If you can't find it, or the home has changed since, a new inspection is the way to go.",
+            ]),
+            ("How long a wind mitigation report lasts", [
+                "A completed form is generally accepted for five years, as long as nothing on the home has changed. If you replace the roof, add impact windows or install shutters, get a new inspection right away, because those upgrades can earn you more credit. You can read about what each question on the form means in our guide to <a href='/resources/wind-mitigation-inspection-florida/'>what a Florida wind mitigation inspection checks</a>.",
+            ]),
+            ("How we do it", [
+                "We check the roof covering, the attic, the roof deck attachment, the roof-to-wall connection, the roof shape and every opening, and back up each answer with photos. You get the completed form, usually the same day, ready to send to your agent.",
+            ]),
+        ],
+        "cta_service": "wind-mitigation",
+    },
+    {
+        "slug": "wind-mitigation-vs-four-point-inspection",
+        "title": "Wind Mitigation vs. Four-Point Inspection: What's the Difference?",
+        "meta": "The difference between a Florida wind mitigation inspection and a four-point inspection, why insurers ask for each, and when to get both in one visit.",
+        "summary": "One can lower your premium, the other can get you insured. Here's how they differ.",
+        "sections": [
+            ("Two different reports for two different reasons", [
+                "Florida insurance companies ask for both of these, so they get mixed up all the time. The easiest way to remember the difference: <strong>a wind mitigation inspection can lower your premium, and a four-point inspection can decide whether you get insured at all.</strong>",
+            ]),
+            ("Wind mitigation inspection", [
+                "<strong>What it's for:</strong> discounts. It documents features that help the home hold up in a hurricane, such as impact windows, shutters, roof-to-wall clips, the roof shape and how the roof deck is attached.",
+                "<strong>Who asks for it:</strong> any homeowner who wants credit for those features. It's optional, but without it your insurer may not give you the discounts.",
+                "<strong>The form:</strong> the state's official Uniform Mitigation Verification Inspection Form, OIR-B1-1802.",
+                "<strong>How long it lasts:</strong> generally five years, as long as the home hasn't changed.",
+            ]),
+            ("Four-point inspection", [
+                "<strong>What it's for:</strong> insurability. It reports on four systems: the roof, the electrical, the plumbing and the heating and air conditioning, including their age and condition.",
+                "<strong>Who asks for it:</strong> many insurers require it for older homes, often homes around 25 to 30 years old or older, before they'll write or renew a policy. Each insurer sets its own rules.",
+                "<strong>The form:</strong> most insurers accept a standard four-point form, and some have their own.",
+                "<strong>How long it lasts:</strong> it's short. Many insurers want a report dated within about 30 days of the application, according to the <a href='https://www.myfloridacfo.com/docs-sf/insurance-consumer-advocate-libraries/ica-documents/four-point-inspection-guide.pdf' target='_blank' rel='noopener'>Florida Department of Financial Services consumer guide</a>. Check with your agent.",
+            ]),
+            ("Do you need both?", [
+                "If you're buying an older home in South Florida, usually yes. The four-point gets you approved, and the wind mitigation lowers what you pay. If you have a newer home, you may only need the wind mitigation.",
+                "Ask your insurance agent which ones they need before you book. They'll know what their company requires.",
+            ]),
+            ("Save time by doing them together", [
+                "Both reports can be done in the same visit, and when you add them to a home inspection, they cost less than booking them on their own. Buyers especially benefit, because you can shop for insurance quotes before your inspection period ends. See our <a href='/services/4-point-inspection/'>four-point inspection</a> and <a href='/services/wind-mitigation/'>wind mitigation</a> pages for what's included.",
+            ]),
+        ],
+        "cta_service": "wind-mitigation",
+    },
+    {
+        "slug": "how-to-prepare-for-four-point-inspection",
+        "title": "How to Prepare for a Four-Point Inspection in Florida",
+        "meta": "How to prepare for a Florida four-point inspection: what the inspector looks at, what to gather beforehand, and simple fixes that help your home get insured.",
+        "summary": "What to gather beforehand, what we look at, and simple fixes that help.",
+        "sections": [
+            ("Why preparation matters", [
+                "A four-point inspection reports on the roof, electrical, plumbing and air conditioning so your insurer can decide whether to write the policy. The inspector reports what's there. But a little preparation makes the visit faster and can keep small, easy fixes from holding up your insurance.",
+            ]),
+            ("Gather these before the inspection", [
+                "<strong>Roof permit or invoice.</strong> The roof's age is one of the first things insurers look at. A permit or receipt with the installation date helps.",
+                "<strong>Electrical, plumbing or AC update records.</strong> If the panel was replaced, the house was re-piped, or a new AC was installed, have the permit or invoice ready.",
+                "<strong>Water heater age.</strong> The label on the water heater usually shows the year. If it was replaced, keep the receipt.",
+            ]),
+            ("Make everything easy to reach", [
+                "Clear a path to the electrical panel, the water heater, the AC air handler and the attic access. Move boxes out of closets that hold equipment, and make sure the attic hatch can open. If we can't see something, we can't document it.",
+            ]),
+            ("Simple fixes worth doing first", [
+                "<strong>Put the cover back on the electrical panel</strong> and make sure every breaker is labeled.",
+                "<strong>Fix any active leaks</strong> under sinks, at toilets or around the water heater.",
+                "<strong>Make sure the water heater has a pressure relief valve and a discharge line.</strong>",
+                "<strong>Make sure the AC works</strong> and the drain line isn't clogged.",
+                "<strong>Repair obvious roof damage,</strong> such as missing shingles or broken tiles, with a licensed roofer.",
+                "These are common reasons a report raises questions. Our guide to <a href='/resources/what-fails-a-4-point-inspection/'>what fails a four-point inspection</a> covers the bigger issues, like older panel brands and polybutylene piping.",
+            ]),
+            ("What happens if something comes up", [
+                "If a problem is found, fix it with a licensed contractor, keep the invoice or permit, and have the report updated. Talk to your agent first, because each insurer has its own requirements, and the same report can be fine for one company and a problem for another.",
+            ]),
+            ("How long it takes", [
+                "The four-point itself usually goes quickly, and it can be done in the same visit as a wind mitigation inspection or a full home inspection. You get the report with photos, usually the same day, ready to send to your agent.",
+            ]),
+        ],
+        "cta_service": "4-point-inspection",
+    },
+    {
+        "slug": "do-i-need-a-mold-inspection-florida",
+        "title": "Do I Need a Mold Inspection in Florida? Signs to Watch For",
+        "meta": "When Florida homeowners, buyers and renters should get a mold inspection: musty smells, AC problems, past leaks and other signs of hidden moisture.",
+        "summary": "The signs of hidden moisture and mold, and when an inspection makes sense.",
+        "sections": [
+            ("Mold and Florida go together", [
+                "South Florida's heat and humidity make it easy for mold to grow. All it needs is moisture and something to grow on, like drywall, wood or the inside of an air conditioning system. The good news is that mold almost always has a moisture source you can find and fix.",
+            ]),
+            ("Signs you should get a mold inspection", [
+                "<strong>A musty or earthy smell</strong> that doesn't go away, especially when the AC turns on.",
+                "<strong>Stains or discoloration</strong> on ceilings, walls or around air vents.",
+                "<strong>Peeling paint, bubbling or soft drywall,</strong> or baseboards that are swollen.",
+                "<strong>A past leak or water event,</strong> such as a roof leak, a pipe that burst, an AC overflow or flooding after a storm.",
+                "<strong>High humidity indoors,</strong> foggy windows, or a home that feels sticky even with the AC running.",
+                "<strong>AC problems,</strong> such as a dripping air handler, a clogged drain line or water in the drain pan.",
+                "<strong>Allergy-like symptoms</strong> that get better when you leave the house. If anyone has health concerns, talk to a doctor.",
+            ]),
+            ("When it's worth it even without signs", [
+                "<strong>Buying a home.</strong> Sellers sometimes paint over stains. An inspection with moisture tools can find what fresh paint hides.",
+                "<strong>Renting a home.</strong> Knowing about moisture before you move in protects your health and your security deposit. See our guide for <a href='/resources/home-inspection-for-renters-florida/'>renters in Florida</a>.",
+                "<strong>After a hurricane or flood.</strong> Wet materials that aren't dried quickly can start growing mold.",
+                "<strong>A home that's been closed up,</strong> such as a seasonal home or a vacant property, especially if the AC was off.",
+            ]),
+            ("What a mold inspection looks for", [
+                "The most important part is finding the moisture. We use a moisture meter and a thermal imaging camera to check walls, ceilings, floors, windows, plumbing and the AC system for hidden water. We look at the air handler, the drain pan and the duct connections, because in South Florida that's where mold most often starts.",
+                "You can learn more about the difference between looking for mold and testing for it in our guide to <a href='/resources/mold-inspection-vs-mold-testing/'>mold inspection vs. mold testing</a>.",
+            ]),
+            ("We don't sell cleanup", [
+                "We inspect only. We don't do mold removal, so our report has nothing to sell you. If you need cleanup, you choose the contractor.",
+            ]),
+        ],
+        "cta_service": "mold-inspection-testing",
+    },
+    {
+        "slug": "home-inspection-red-flags-florida",
+        "title": "The Biggest Red Flags in a Florida Home Inspection",
+        "meta": "The home inspection findings that matter most for Florida buyers: roof problems, water damage, older electrical panels, polybutylene pipes, AC issues and unpermitted work.",
+        "summary": "The findings that cost the most to fix or make a home hard to insure.",
+        "sections": [
+            ("Not every finding is a big deal", [
+                "Every home inspection report has findings, even on new homes. Most are maintenance items, like a loose handrail or a dripping faucet. The ones below are different. They can cost thousands of dollars to fix, or make it hard to get insurance in Florida. If any of these show up, slow down and get answers before your inspection period ends.",
+            ]),
+            ("1. Roof problems", [
+                "An old roof, active leaks, soft spots or missing shingles and tiles. In Florida, the roof affects both your repair costs and your insurance. Insurers look closely at roof age, and a roof near the end of its life can delay or raise the price of a policy. Read <a href='/resources/roof-age-insurance-florida/'>how old a roof can be for insurance in Florida</a>.",
+            ]),
+            ("2. Water damage and hidden moisture", [
+                "Stains, soft drywall, swollen baseboards, or moisture behind walls that only shows up on a moisture meter or a thermal camera. Water is the number one enemy of a home in South Florida, because it leads to rot, mold and more repairs.",
+            ]),
+            ("3. Older electrical panels and wiring", [
+                "Some older panel brands are commonly declined by insurers. Other warning signs are scorched or melted wires, double-tapped breakers, outlets that aren't grounded, and wire splices outside a junction box. Electrical problems are both a safety issue and an insurance issue.",
+            ]),
+            ("4. Polybutylene or failing plumbing", [
+                "Polybutylene supply pipes, often gray plastic, were used in some homes built in the 1980s and 1990s and are widely declined by insurers. Older cast iron drain lines can crack and leak under the slab. Active leaks and an old water heater are also worth noting.",
+            ]),
+            ("5. AC problems", [
+                "In South Florida, the AC isn't a luxury. Watch for a unit that doesn't cool well, a rusted or overflowing drain pan, a clogged drain line, or a system near the end of its life. A replacement can cost thousands.",
+            ]),
+            ("6. Cracks and structural movement", [
+                "Small hairline cracks in concrete block or stucco are common. Wide cracks, cracks that run diagonally from windows and doors, doors that stick, or sloping floors can point to settlement and should be looked at by a structural engineer.",
+            ]),
+            ("7. Unpermitted additions and repairs", [
+                "Enclosed patios, converted garages, added bathrooms and new electrical work with no permit history can lead to safety issues and problems with the city or your insurer later. Ask the seller for permits, and check the permit history with the city or county. Our guide to <a href='/resources/check-contractor-license-florida/'>checking a contractor's license</a> explains what unlicensed work often looks like.",
+            ]),
+            ("What to do if you see one", [
+                "Talk to your real estate agent about your options. You can ask the seller to repair it, ask for a credit, get a quote from a licensed contractor, or walk away if your contract allows it. The clearer your report is, the stronger your position. See what ours look like in our <a href='/sample-reports/'>sample reports</a>.",
+            ]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
+        "slug": "buying-older-home-miami",
+        "title": "Buying an Older Home in Miami? What to Watch For",
+        "meta": "What buyers should know before buying an older home in Miami: cast iron drains, polybutylene and galvanized pipes, older electrical panels, roof age and insurance.",
+        "summary": "Old pipes, older electrical panels, roof age and what they mean for insurance.",
+        "sections": [
+            ("Older homes have a lot going for them", [
+                "Many of Miami's older concrete block homes are solidly built, sit on bigger lots and are in established neighborhoods. But a home built decades ago has also had decades of wear, repairs and updates, and not all of them were done well. Here's what to pay attention to, and what it can mean for your insurance.",
+            ]),
+            ("Plumbing", [
+                "<strong>Cast iron drain lines.</strong> Common in older Miami homes. Over time they can crack, rust through and leak under the slab. Slow drains, backups and odors are warning signs. A plumber can run a camera through the drain line to see its condition. That's a separate service from a home inspection.",
+                "<strong>Galvanized steel supply pipes.</strong> They rust from the inside, which can lower water pressure and cause leaks.",
+                "<strong>Polybutylene supply pipes.</strong> Used in some homes built in the 1980s and 1990s, and widely declined by insurers.",
+            ]),
+            ("Electrical", [
+                "Older homes may have an outdated electrical panel, too few outlets, ungrounded outlets, or wiring that's been added onto over the years. Some older panel brands are commonly declined by insurers. Watch for extension cords used as permanent wiring, which tell you the home needs more outlets.",
+            ]),
+            ("Roof", [
+                "The roof may have been replaced more than once. Find out when it was last replaced, and ask for the permit. Roof age matters a lot to Florida insurers. Read <a href='/resources/roof-age-insurance-florida/'>how old a roof can be for insurance in Florida</a>.",
+            ]),
+            ("Windows, doors and hurricane protection", [
+                "Older homes may still have their original windows. Impact windows, impact doors or approved shutters protect the home and can lower your windstorm premium. A <a href='/services/wind-mitigation/'>wind mitigation inspection</a> documents what's there.",
+            ]),
+            ("Additions and past repairs", [
+                "Older homes often have additions, enclosed patios or converted garages. Ask the seller for permits, and check the permit history with the city or county. Unpermitted work can cause problems later with safety, insurance and resale.",
+            ]),
+            ("Insurance comes first", [
+                "Many insurers ask for a four-point inspection on older homes before they'll write a policy. Get a quote before your inspection period ends, so there are no surprises at closing. We can do the home inspection, the four-point and the wind mitigation in one visit. Read the difference in <a href='/resources/wind-mitigation-vs-four-point-inspection/'>wind mitigation vs. four-point</a>.",
+            ]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
+        "slug": "home-inspection-after-hurricane-florida",
+        "title": "After a Hurricane: What to Check and When to Call a Home Inspector",
+        "meta": "What Florida homeowners should check after a hurricane, how to document damage for insurance, and when a home inspection makes sense.",
+        "summary": "Stay safe, document everything, and know when to get a professional inspection.",
+        "sections": [
+            ("Safety first", [
+                "After a storm, stay away from downed power lines and standing water that could be touching electrical lines. Don't go up on the roof. If water reached outlets, the electrical panel or appliances, have a licensed electrician check them before you turn the power back on. If you smell gas, leave the home and call your gas company.",
+            ]),
+            ("Document everything", [
+                "Before you clean up or make repairs, take photos and videos of every room, the roof from the ground, the outside walls, windows, doors, fences and anything damaged. Keep receipts for emergency repairs, like tarps or boarding up a window. Your insurer will want to see the damage and what you did to protect the home from more damage.",
+                "Report the damage to your insurance company as soon as you can, and read your policy for deadlines. Florida has time limits for filing a claim.",
+            ]),
+            ("What to check on the outside", [
+                "<strong>Roof:</strong> missing or lifted shingles, broken tiles, damaged flashing, and debris on the roof. Look from the ground or use binoculars.",
+                "<strong>Windows and doors:</strong> cracked glass, damaged frames, and water coming in around them.",
+                "<strong>Walls and soffits:</strong> damaged stucco, missing soffit panels and gaps where water could get in.",
+                "<strong>AC unit:</strong> moved, tilted or damaged by debris. Don't run it if it was under water.",
+                "<strong>Drainage:</strong> standing water against the foundation.",
+            ]),
+            ("What to check on the inside", [
+                "Look for water stains on ceilings, wet carpet or flooring, damp walls, swollen baseboards and a musty smell. Check the attic if you can safely reach it, because a roof leak often shows up there first. Wet materials should be dried quickly. The longer they stay wet, the more likely mold becomes.",
+            ]),
+            ("When to call a home inspector", [
+                "<strong>You see signs of water coming in</strong> but can't find where it's coming from. A moisture meter and a thermal imaging camera can find hidden water behind walls and ceilings.",
+                "<strong>You want a written record</strong> of the condition of the home with photos, for your insurer or for your own records.",
+                "<strong>You're buying a home after a storm.</strong> Make sure storm damage wasn't just painted over.",
+                "<strong>You're not sure if the damage is serious.</strong> An inspector can tell you what needs a roofer, an electrician or another contractor.",
+                "We're certified by InterNACHI as Post-Hurricane Building Safety Inspectors, and we know what storms do to South Florida homes.",
+            ]),
+            ("Be careful who you hire", [
+                "After every big storm, unlicensed contractors show up. Before you hire anyone for repairs, check their license. Our guide to <a href='/resources/check-contractor-license-florida/'>checking a contractor's license in Florida</a> shows you how.",
+            ]),
+            ("Before the next storm", [
+                "A <a href='/services/wind-mitigation/'>wind mitigation inspection</a> shows which features protect your home, and which upgrades could protect it better and lower your premium.",
+            ]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
+        "slug": "pre-listing-inspection-florida-sellers",
+        "title": "Selling Your Home in Florida? Why a Pre-Listing Inspection Pays Off",
+        "meta": "Why Florida sellers get a pre-listing inspection: fewer surprises, stronger negotiating, faster insurance quotes for buyers, and a smoother closing.",
+        "summary": "Find problems before the buyer's inspector does, and sell on your terms.",
+        "sections": [
+            ("The surprise that kills deals", [
+                "In Florida, buyers usually get an inspection period. If their inspector finds a roof leak, an electrical problem or water damage you didn't know about, you're suddenly negotiating under a deadline, and the buyer has the leverage. Some deals fall apart over it. A pre-listing inspection lets you find those issues first.",
+            ]),
+            ("What you get out of it", [
+                "<strong>Time to fix things on your terms.</strong> You can get quotes and choose your own contractor instead of rushing repairs in the middle of a deal.",
+                "<strong>A better price strategy.</strong> If you'd rather not fix something, you can price the home with it in mind instead of giving a big credit later.",
+                "<strong>Fewer surprises.</strong> You know what the buyer's inspector is likely to find.",
+                "<strong>Buyer confidence.</strong> Sharing a recent report shows you're not hiding anything.",
+            ]),
+            ("Have the insurance forms ready", [
+                "Florida buyers need homeowners insurance to close, and insurers often ask for a four-point inspection and give credit for a wind mitigation form. Having current versions ready means buyers can get insurance quotes quickly. That's a real selling point in today's Florida market.",
+            ]),
+            ("What it covers", [
+                "A pre-listing inspection is the same scope as a buyer's inspection: the roof, attic, structure, electrical, plumbing, air conditioning, interior and exterior. We use a moisture meter and a thermal imaging camera to find hidden moisture, and you get a report with photos, usually the same day.",
+            ]),
+            ("Fix it, price it or disclose it", [
+                "Once you have the report, you decide what to do with each item. Talk with your real estate agent about what to fix and what to disclose. Disclosure rules are a question for your agent or attorney. Our report is a factual record of what we observed.",
+            ]),
+            ("When to book", [
+                "Book it a few weeks before you list, so there's time for repairs, quotes and touch-ups before photos and showings. See our <a href='/services/pre-listing-inspection/'>pre-listing inspection</a> page for details.",
+            ]),
+        ],
+        "cta_service": "pre-listing-inspection",
+    },
+    {
+        "slug": "new-construction-home-inspection-florida",
+        "title": "Buying a Brand-New Home in Florida? Why You Still Need an Inspection",
+        "meta": "Why buyers of new construction homes in South Florida should get an independent inspection before closing and an 11-month warranty inspection before the builder's warranty ends.",
+        "summary": "New doesn't mean perfect. Inspect before closing and again before your warranty ends.",
+        "sections": [
+            ("New doesn't mean perfect", [
+                "A new home passes the city's code inspections, so many buyers assume there's nothing left to find. But code inspectors check that the home meets the minimum code at certain stages of construction, often on a tight schedule. They aren't working for you, and they don't check the finish work, the details or everything that happens after they leave.",
+                "Builders work fast with many different subcontractors. Mistakes happen, and it's much easier to get them fixed before you close or while your warranty is still active.",
+            ]),
+            ("What we commonly find in new homes", [
+                "Missing or uneven insulation in the attic, found with thermal imaging.",
+                "Roof and window flashing details that weren't finished.",
+                "Unsealed holes where pipes and wires go through walls.",
+                "Grading and drainage that sends water toward the house instead of away from it.",
+                "Outlets wired incorrectly, or GFCI protection missing.",
+                "AC drain lines without proper slope, and incomplete finish work like doors, cabinets, caulking and paint.",
+            ]),
+            ("Inspection before closing", [
+                "Book an independent inspection before your final walkthrough with the builder. The report becomes your punch list, so the builder can fix the items before you close and move in.",
+            ]),
+            ("The 11-month warranty inspection", [
+                "Many builders include a warranty on workmanship for the first year. Some problems only show up after you've lived in the home for a few months, like settling cracks, leaks, doors that stick and AC issues. An inspection about a month before your warranty ends documents these, so you can submit the list to the builder while they still have to fix them. Check your warranty paperwork for the exact dates and what it covers.",
+            ]),
+            ("Townhomes and single-family homes", [
+                "We inspect new construction townhomes and single-family homes across Miami-Dade, Broward and Palm Beach. You get a report with photos, usually the same day, that you can send straight to the builder. See our <a href='/services/new-construction-inspection/'>new construction and warranty inspections</a> page for details.",
+            ]),
+        ],
+        "cta_service": "new-construction-inspection",
+    },
+    {
+        "slug": "hidden-water-leaks-thermal-imaging",
+        "title": "Hidden Water Leaks: Signs to Watch For and How Thermal Imaging Finds Them",
+        "meta": "The signs of hidden water leaks in Florida homes, the most common sources, and how a moisture meter and thermal imaging camera find leaks you can't see.",
+        "summary": "Where leaks hide in South Florida homes, and the tools that find them.",
+        "sections": [
+            ("Small leaks, big repairs", [
+                "A slow leak behind a wall or above a ceiling can go on for months before you see it. By then it may have damaged drywall, flooring, cabinets or framing, and started mold. In South Florida, finding water early is one of the best ways to protect your home and avoid a big repair bill.",
+            ]),
+            ("Signs of a hidden leak", [
+                "A water bill that's higher than usual with no change in how much water you use.",
+                "Stains, bubbling paint or soft spots on walls and ceilings.",
+                "Warped or lifting floors, or swollen baseboards and cabinet bottoms.",
+                "A musty smell in one area of the home.",
+                "The sound of running water when nothing is on.",
+                "Cracked tile or grout around showers and tubs.",
+            ]),
+            ("Where leaks usually come from", [
+                "<strong>The AC system.</strong> A clogged drain line or a rusted drain pan can overflow into walls and ceilings.",
+                "<strong>Plumbing.</strong> Supply lines under sinks and toilets, the water heater, and pipes inside walls.",
+                "<strong>Showers and tubs.</strong> Failed grout, caulk or shower pans.",
+                "<strong>Windows and doors.</strong> Worn seals and flashing, especially during heavy rain.",
+                "<strong>The roof.</strong> Damaged flashing, cracked tiles or worn underlayment.",
+            ]),
+            ("How thermal imaging helps", [
+                "A thermal imaging camera shows temperature differences on a surface. Wet materials are usually cooler than dry ones as the water evaporates, so a hidden leak often shows up as a cool spot or pattern on a wall or ceiling. It lets us scan a whole room quickly without cutting into anything.",
+                "Thermal imaging doesn't see through walls, and a cool spot isn't always water. That's why we confirm what we find with a moisture meter, which measures moisture directly in the material. Together, the two tools find problems that are easy to miss with your eyes alone.",
+            ]),
+            ("Included with every inspection", [
+                "We bring a moisture meter and a thermal imaging camera to every home inspection. If you're worried about a specific leak or mold, we also offer a <a href='/services/mold-inspection-testing/'>mold inspection</a> focused on finding moisture. Once we find the source, a licensed plumber, roofer or AC contractor can fix it.",
+            ]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
+        "slug": "what-happens-during-home-inspection",
+        "title": "What Happens During a Home Inspection? What to Expect, Step by Step",
+        "meta": "What happens during a Florida home inspection: how long it takes, what the inspector checks, whether you should be there, and what's in the report.",
+        "summary": "How long it takes, what we check, and what you get afterward.",
+        "sections": [
+            ("Before the inspection", [
+                "When you book, we confirm the address, the square footage and anything you're especially concerned about. You'll sign the inspection agreement online before the visit, which locks in your date and time. If you're buying, your real estate agent usually coordinates access with the seller's agent.",
+                "Make sure the utilities are on, and that we can reach the electrical panel, the water heater, the AC system and the attic.",
+            ]),
+            ("How long it takes", [
+                "Most home inspections take one to two hours, depending on the size and age of the home. Adding a wind mitigation or four-point inspection in the same visit adds a little time but saves you a second appointment.",
+            ]),
+            ("What we check", [
+                "<strong>Outside:</strong> the roof, gutters, walls, windows, doors, grading and drainage, and the AC condenser.",
+                "<strong>Attic:</strong> the roof structure, insulation, ventilation and signs of leaks.",
+                "<strong>Electrical:</strong> the panel, breakers, visible wiring, and outlets tested for grounding and GFCI protection.",
+                "<strong>Plumbing:</strong> supply and drain pipes we can see, water pressure, fixtures, toilets and the water heater.",
+                "<strong>Air conditioning:</strong> whether it cools, the air handler, the drain line and the drain pan.",
+                "<strong>Inside:</strong> walls, ceilings, floors, windows, doors, stairs, the kitchen, bathrooms and smoke detectors.",
+                "Throughout the home, we use a moisture meter and a thermal imaging camera to look for hidden moisture.",
+            ]),
+            ("What isn't included", [
+                "A home inspection is visual and non-invasive. We don't open walls, move furniture or test inside sewer lines. Pools and spas aren't part of our inspection, so hire a pool specialist if the home has one. If we find something that needs a closer look, we'll tell you which kind of licensed professional to call.",
+            ]),
+            ("Should you be there?", [
+                "If you can, yes. Walking through the home with the inspector at the end is the fastest way to understand what's serious and what's routine maintenance. If you can't make it, that's fine too. The report explains everything, and you can call or text us with questions.",
+            ]),
+            ("Your report", [
+                "You get a detailed digital report with photos, usually the same day. Each finding is written in plain English, so you know what it means and whether it's a safety issue, a repair or something to keep an eye on. See real examples in our <a href='/sample-reports/'>sample reports</a>.",
+            ]),
+            ("After the inspection", [
+                "If you're buying, share the report with your real estate agent and decide what to ask the seller to repair or credit. If an insurance form is needed, send the four-point or wind mitigation report to your insurance agent. And keep the report. It's a useful record of your home's condition for years to come.",
+            ]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
         "slug": "home-inspection-for-renters-florida",
         "title": "Renting in Florida? Why a Move-In Inspection Protects You (and Your Deposit)",
         "meta": "Renting a house, duplex, condo or townhouse in Florida? Why a move-in inspection protects your security deposit, what can go wrong, and what an inspector checks.",

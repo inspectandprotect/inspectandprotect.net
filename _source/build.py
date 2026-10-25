@@ -530,7 +530,7 @@ def build_resources():
         body = f'''<section class="page-hero on-dark"><div class="wrap narrow">{crumbs([("/resources/","Resources"),(None,"Guide")])}
 <h1 style="font-size:clamp(32px,4.5vw,48px)">{a["title"]}</h1><p class="lede">{a["summary"]}</p></div></section>
 <section class="bg-white"><div class="wrap narrow prose">{secs}
-<div class="callout" style="margin-top:40px"><div style="flex:1 1 300px"><h3>{svc["nav"]} from {svc["price_from"]}</h3><p style="margin:6px 0 0;color:var(--muted)">Serving Miami-Dade, Broward and Palm Beach with same-day reports.</p></div><a class="btn btn-dark" href="/services/{svc["slug"]}/">Learn more</a></div>
+<div class="callout" style="margin-top:40px"><div style="flex:1 1 300px"><h3>{svc["nav"]} from {svc["price_from"]}</h3><p style="margin:6px 0 0;color:var(--muted)">Serving Miami-Dade, Broward and Palm Beach with same-day reports.</p></div><div class="btn-row" style="margin:0"><a class="btn btn-dark" href="/services/{svc["slug"]}/">Learn more</a><a class="btn btn-outline-dark" href="/pricing/">See all prices</a></div></div>
 </div></section>{cta_band()}'''
         art_ld = {"@context": "https://schema.org", "@type": "Article", "headline": strip_tags(a["title"]),
                   "author": {"@type": "Person", "name": "Nicholas Figaro"}, "publisher": {"@id": DOMAIN + "/#business"},
