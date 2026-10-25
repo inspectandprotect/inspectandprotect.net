@@ -318,13 +318,20 @@ SERVICE_CITY_SERVICES = ["home-inspection", "wind-mitigation", "4-point-inspecti
 ARTICLES = [
     {
         "slug": "home-inspection-for-renters-florida",
-        "title": "Renting a Home in Florida? Why a Move-In Inspection Protects You (and Your Deposit)",
-        "meta": "Why renters in Florida should get a home inspection before moving in: what can go wrong, how it protects your security deposit, and what an inspector checks.",
-        "summary": "What can go wrong when you move in blind, how a report protects your deposit, and what we check.",
+        "title": "Renting in Florida? Why a Move-In Inspection Protects You (and Your Deposit)",
+        "meta": "Renting a house, duplex, condo or townhouse in Florida? Why a move-in inspection protects your security deposit, what can go wrong, and what an inspector checks.",
+        "summary": "For houses, duplexes, condos and townhouses: what can go wrong when you move in blind, how a report protects your deposit, and what we check.",
         "sections": [
             ("Most renters move in blind", [
                 "When you buy a home, an inspection is a normal part of the process. When you rent, most people do a quick walk-through, sign the lease and get the keys. You see the paint, the floors and the kitchen. You don't see the slow leak under the sink, the outlet that isn't grounded, the AC that's struggling, or the moisture behind the wall.",
                 "Then something breaks a few months in, and the question becomes: was it already like that, or did you cause it? Without proof of the condition on day one, it's your word against your landlord's.",
+            ]),
+            ("For every type of rental", [
+                "A move-in inspection makes sense whatever you're renting in Florida:",
+                "<strong>Single-family homes:</strong> you're often responsible for more of the upkeep, so it's important to know the condition of the roof, AC, water heater, plumbing and electrical before you take it on.",
+                "<strong>Duplexes:</strong> you share walls, and sometimes plumbing or a roof, with your neighbor. A leak or problem that starts on their side can show up on yours, so a record of your unit's condition protects you.",
+                "<strong>Condos:</strong> the association usually maintains the building, while the owner, your landlord, is responsible for the inside of the unit. We document the unit itself: walls, ceilings, floors, windows, electrical, plumbing, the water heater and the AC. That way you know what's working, and you can tell whether a stain on the ceiling came from the unit above, not from you.",
+                "<strong>Townhouses:</strong> you may share walls and a roof line with your neighbors, and the association may handle some exterior items. We check everything inside your unit plus the parts of the exterior and roof we can safely see and reach.",
             ]),
             ("What can go wrong", [
                 "<strong>You get blamed for damage that was already there.</strong> A cracked tile, a stained ceiling, a broken window latch or a damaged cabinet can end up deducted from your security deposit when you move out.",
@@ -334,7 +341,8 @@ ARTICLES = [
                 "<strong>Your bills go up.</strong> An AC unit that's low on performance, leaky ducts, or windows and doors that don't seal can mean higher electric bills all summer.",
             ]),
             ("Know the rules in Florida", [
-                "Under <a href=\"https://www.flsenate.gov/laws/statutes/2024/83.51\" target=\"_blank\" rel=\"noopener\">Florida Statute 83.51</a>, Florida landlords must follow local building, housing and health codes, keep the structure in good repair and keep the plumbing in reasonable working condition. In a single-family home or duplex, the landlord must also install working smoke detectors at the start of the tenancy. But the law also says the landlord isn't responsible for conditions caused by the tenant, and for single-family homes and duplexes, some repair duties can be shifted to the tenant in writing. That's why the condition at move-in matters so much.",
+                "Under <a href=\"https://www.flsenate.gov/laws/statutes/2024/83.51\" target=\"_blank\" rel=\"noopener\">Florida Statute 83.51</a>, Florida landlords must follow local building, housing and health codes, keep the structure in good repair and keep the plumbing in reasonable working condition. But the law also says the landlord isn't responsible for conditions caused by the tenant. That's why the condition at move-in matters so much.",
+                "The rules depend on the type of home. <strong>In a single-family home or duplex,</strong> the landlord must install working smoke detectors at the start of the tenancy unless the lease says otherwise, and some repair duties can be shifted to the tenant in writing. <strong>In other rentals, such as apartments and condo units,</strong> the landlord must also provide for pest extermination, working locks and keys, garbage removal, heat, running water and hot water, unless the lease says otherwise in writing.",
                 "Under <a href=\"https://www.flsenate.gov/laws/statutes/2025/83.49\" target=\"_blank\" rel=\"noopener\">Florida Statute 83.49</a>, when your lease ends the landlord has 15 days to return your deposit if they aren't making a claim against it. If they are, they have 30 days to send you written notice of the amount and the reason, and you have 15 days after you receive it to object in writing. If you have a dated report with photos from move-in day, your objection is backed by evidence instead of memory.",
                 "This article is general information, not legal advice. Read your lease carefully, and talk to an attorney if you're in a dispute with your landlord.",
             ]),
@@ -362,7 +370,7 @@ ARTICLES = [
                 "You get a detailed report with photos, usually the same day. It's written in plain English so you know what each finding means and whether it's a safety issue, a repair, or something to keep an eye on. You can see what our reports look like in our <a href=\"/sample-reports/\">sample reports</a>.",
             ]),
             ("Protect yourself before you get the keys", [
-                "A few hundred dollars up front can protect a security deposit worth much more, and it can keep you and your family out of a home with problems you didn't know about. If you're about to rent anywhere in Miami-Dade, Broward or Palm Beach, call or text us, or book online.",
+                "A few hundred dollars up front can protect a security deposit worth much more, and it can keep you and your family out of a home with problems you didn't know about. Whether you're renting a house, a duplex, a condo or a townhouse anywhere in Miami-Dade, Broward or Palm Beach, call or text us, or book online.",
             ]),
         ],
         "cta_service": "home-inspection",
