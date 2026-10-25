@@ -317,6 +317,40 @@ SERVICE_CITY_SERVICES = ["home-inspection", "wind-mitigation", "4-point-inspecti
 # ---------------------------------------------------------------- articles
 ARTICLES = [
     {
+        "slug": "check-contractor-license-florida",
+        "title": "How to Check a Contractor's License in Florida (and Spot Unlicensed Work Before You Buy)",
+        "meta": "How to verify a Florida contractor's license, the warning signs of unlicensed contractors, and what unlicensed work looks like in a home inspection.",
+        "summary": "Six steps to protect yourself, the warning signs to watch for, and what a home inspector finds.",
+        "sections": [
+            ("Why this matters right now", [
+                "In October 2026 the Hillsborough County Sheriff's Office announced that its Construction Fraud Unit arrested 50 people in an undercover operation targeting unlicensed contractors, run from June 1 through October 2. Detectives found suspects through online and social media ads and tips from residents (<a href=\"https://www.wfla.com/news/hillsborough-county/50-arrested-in-hillsborough-county-operation-targeting-unlicensed-contractors-hcso/\" target=\"_blank\" rel=\"noopener\">WFLA</a>).",
+                "As Sheriff Chad Chronister put it, \u201cA contractor's license is more than a piece of paper.\u201d The person working on your wiring, your roof or your home's foundation should have the training to do it safely. The same thing happens all over Florida, including here in Miami-Dade, Broward and Palm Beach. Here's how to protect yourself.",
+            ]),
+            ("1. Look up the license yourself", [
+                "Go to <a href=\"https://www.myfloridalicense.com/wl11.asp\" target=\"_blank\" rel=\"noopener\">MyFloridaLicense.com</a>, the State of Florida's licensing site, and search the contractor's name or license number. Make sure the license is <strong>current and active</strong>, the name matches the person or company you're hiring, and the license type matches the job. A roofer should hold a roofing license, an electrician an electrical license.",
+                "Some trades also need a local license from your county or city. If you're not sure, ask the contractor which licenses they hold and look each one up.",
+            ]),
+            ("2. Ask for proof of insurance", ["A licensed contractor should be able to show you proof of liability insurance, and workers' compensation if they have employees. If someone gets hurt on your property or your home is damaged, this is what protects you."]),
+            ("3. Get everything in writing", ["Before work starts, get a written contract with the scope of work, materials, price, payment schedule, timeline and the contractor's license number. If it isn't in writing, it's hard to prove later."]),
+            ("4. Don't pay it all up front", ["A reasonable deposit is normal. Paying the full price before the work is done is how many homeowners lose their money. Tie payments to finished stages of the job."]),
+            ("5. Make sure the work is permitted", ["Most roofing, electrical, plumbing, AC, window and structural work in Florida needs a permit. Ask for the permit number and check it with your city or county building department. Permits mean the work gets inspected by the building department, which is another layer of protection for you."]),
+            ("6. Know the warning signs", [
+                "<strong>Cash only, or a big discount for cash.</strong> Licensed businesses take checks and cards and give receipts.",
+                "<strong>No written contract</strong>, or a contract with no license number on it.",
+                "<strong>Pressure to decide today</strong>, or someone going door to door offering leftover materials or a special price.",
+                "<strong>No license number on their ads, truck or business card.</strong> If it's missing, ask for it and look it up.",
+                "<strong>A price far below every other quote.</strong> It often means corners will be cut or the job won't be finished.",
+            ]),
+            ("What unlicensed work looks like in a home inspection", [
+                "As a home inspector, I see the results of unlicensed and unpermitted work all the time. Common examples in South Florida homes include wire splices left outside a junction box in the attic, indoor-rated electrical cable run on the outside of the house, outlets that test with an open ground, AC units installed with no drain pan over finished space, and additions or enclosed patios with no permit history.",
+                "Many of these show up in the <a href=\"/sample-reports/\">sample reports on this site</a>, with photos and a plain-English explanation of each one.",
+            ]),
+            ("Why it matters when you're buying a home", ["Unpermitted or unlicensed work can mean costly repairs, safety hazards and insurance problems after you close, especially on roofs, electrical panels and plumbing. If the seller has had work done, ask for the permits and invoices, and have the home inspected before your inspection period ends."]),
+            ("Home inspectors need a license too", ["In Florida, home inspectors must be licensed by the Department of Business and Professional Regulation. Look up any inspector before you book, the same way you would a contractor. You can <a href=\"/certifications/\">verify our Florida license and InterNACHI certifications here</a>."]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
         "slug": "wind-mitigation-inspection-florida",
         "title": "What a Florida Wind Mitigation Inspection Checks, and How It Lowers Your Premium",
         "meta": "The 7 questions on Florida's OIR-B1-1802 wind mitigation form, what qualifies for discounts, and how long the form is valid.",
