@@ -523,4 +523,10 @@ def footer_seals():
 GADS_JS = """<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18371170476"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-18371170476');
 window.addEventListener('message',function(e){try{if(e.origin.indexOf('calendly.com')>-1&&e.data&&e.data.event==='calendly.event_scheduled'){gtag('event','conversion',{'send_to':'AW-18371170476/WzEECKP9rKEdEKyhh7hE','value':350.0,'currency':'USD'})}}catch(x){}});
-document.addEventListener('click',function(e){try{var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"]');if(a){gtag('event','conversion',{'send_to':'AW-18371170476/8oMECJm1p6cdEKyhh7hE','value':1.0,'currency':'USD'})}}catch(x){}},true);</script>"""
+document.addEventListener('click',function(e){try{var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"]');if(a){gtag('event','conversion',{'send_to':'AW-18371170476/8oMECJm1p6cdEKyhh7hE','value':1.0,'currency':'USD'})}}catch(x){}},true);</script>
+<!-- Meta Pixel (Inspect and Protect Website) -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1908101393487546');fbq('track','PageView');
+window.addEventListener('message',function(e){try{if(e.origin.indexOf('calendly.com')>-1&&e.data&&e.data.event==='calendly.event_scheduled'){fbq('track','Schedule')}}catch(x){}});
+document.addEventListener('click',function(e){try{var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="sms:"],a[href^="mailto:"]');if(a){fbq('track','Contact')}}catch(x){}},true);</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1908101393487546&ev=PageView&noscript=1"></noscript>"""
