@@ -317,6 +317,57 @@ SERVICE_CITY_SERVICES = ["home-inspection", "wind-mitigation", "4-point-inspecti
 # ---------------------------------------------------------------- articles
 ARTICLES = [
     {
+        "slug": "home-inspection-for-renters-florida",
+        "title": "Renting a Home in Florida? Why a Move-In Inspection Protects You (and Your Deposit)",
+        "meta": "Why renters in Florida should get a home inspection before moving in: what can go wrong, how it protects your security deposit, and what an inspector checks.",
+        "summary": "What can go wrong when you move in blind, how a report protects your deposit, and what we check.",
+        "sections": [
+            ("Most renters move in blind", [
+                "When you buy a home, an inspection is a normal part of the process. When you rent, most people do a quick walk-through, sign the lease and get the keys. You see the paint, the floors and the kitchen. You don't see the slow leak under the sink, the outlet that isn't grounded, the AC that's struggling, or the moisture behind the wall.",
+                "Then something breaks a few months in, and the question becomes: was it already like that, or did you cause it? Without proof of the condition on day one, it's your word against your landlord's.",
+            ]),
+            ("What can go wrong", [
+                "<strong>You get blamed for damage that was already there.</strong> A cracked tile, a stained ceiling, a broken window latch or a damaged cabinet can end up deducted from your security deposit when you move out.",
+                "<strong>You end up paying for repairs.</strong> If your lease makes you responsible for certain repairs, a problem that existed before you moved in can quietly become yours to fix.",
+                "<strong>Your health and safety are at risk.</strong> Missing or dead smoke detectors, unsafe wiring, a water heater with no working relief valve, or hidden mold can affect you and your family every day you live there.",
+                "<strong>Your belongings are at risk.</strong> A roof leak, a plumbing leak or a clogged AC drain line can ruin furniture, electronics and clothing.",
+                "<strong>Your bills go up.</strong> An AC unit that's low on performance, leaky ducts, or windows and doors that don't seal can mean higher electric bills all summer.",
+            ]),
+            ("Know the rules in Florida", [
+                "Under <a href=\"https://www.flsenate.gov/laws/statutes/2024/83.51\" target=\"_blank\" rel=\"noopener\">Florida Statute 83.51</a>, Florida landlords must follow local building, housing and health codes, keep the structure in good repair and keep the plumbing in reasonable working condition. In a single-family home or duplex, the landlord must also install working smoke detectors at the start of the tenancy. But the law also says the landlord isn't responsible for conditions caused by the tenant, and for single-family homes and duplexes, some repair duties can be shifted to the tenant in writing. That's why the condition at move-in matters so much.",
+                "Under <a href=\"https://www.flsenate.gov/laws/statutes/2025/83.49\" target=\"_blank\" rel=\"noopener\">Florida Statute 83.49</a>, when your lease ends the landlord has 15 days to return your deposit if they aren't making a claim against it. If they are, they have 30 days to send you written notice of the amount and the reason, and you have 15 days after you receive it to object in writing. If you have a dated report with photos from move-in day, your objection is backed by evidence instead of memory.",
+                "This article is general information, not legal advice. Read your lease carefully, and talk to an attorney if you're in a dispute with your landlord.",
+            ]),
+            ("How a move-in inspection protects you", [
+                "<strong>A dated record of the condition.</strong> You get a written report with photos showing exactly how the home looked and worked the day you moved in.",
+                "<strong>Leverage before you sign.</strong> If the inspection finds problems, you can ask the landlord to fix them before you move in, or put them in writing as existing conditions so they're never charged to you.",
+                "<strong>Proof at move-out.</strong> If the landlord tries to keep part of your deposit for something that was already there, you can show the report.",
+                "<strong>Peace of mind.</strong> You know the electrical, plumbing, AC and safety devices are working before your family moves in.",
+            ]),
+            ("What we check", [
+                "<strong>Roof and ceilings:</strong> signs of active or past leaks, stains and soft spots.",
+                "<strong>Electrical:</strong> outlets tested for grounding and correct wiring, GFCI protection in kitchens, bathrooms and outdoors, the electrical panel and visible wiring.",
+                "<strong>Plumbing:</strong> leaks under sinks, water pressure, drains, toilets and the water heater.",
+                "<strong>Air conditioning:</strong> whether it cools properly, the condition of the unit and the drain line.",
+                "<strong>Moisture and mold:</strong> we use a moisture meter and a thermal imaging camera to find hidden moisture behind walls and under floors. If you're worried about mold, we also offer <a href=\"/services/mold-inspection-testing/\">mold inspection and testing</a>.",
+                "<strong>Safety:</strong> smoke detectors, stairs and railings, and doors and windows that open, close and lock.",
+                "<strong>Doors, windows, floors, walls and cabinets:</strong> existing damage documented with photos.",
+                "<strong>Signs of pests</strong> such as droppings or damaged wood.",
+            ]),
+            ("When to schedule it", [
+                "The best time is <strong>before you sign the lease</strong>, so you can ask for repairs while you still have leverage. The next best time is <strong>before you move your belongings in</strong>, while the home is empty and every wall, floor and cabinet is easy to see. Let your landlord or property manager know you're having it inspected, and share the report with them so you're both working from the same record.",
+                "Renters can also book an inspection <strong>before moving out</strong>, so you have a second record showing how you're leaving the home.",
+            ]),
+            ("What you get", [
+                "You get a detailed report with photos, usually the same day. It's written in plain English so you know what each finding means and whether it's a safety issue, a repair, or something to keep an eye on. You can see what our reports look like in our <a href=\"/sample-reports/\">sample reports</a>.",
+            ]),
+            ("Protect yourself before you get the keys", [
+                "A few hundred dollars up front can protect a security deposit worth much more, and it can keep you and your family out of a home with problems you didn't know about. If you're about to rent anywhere in Miami-Dade, Broward or Palm Beach, call or text us, or book online.",
+            ]),
+        ],
+        "cta_service": "home-inspection",
+    },
+    {
         "slug": "check-contractor-license-florida",
         "title": "How to Check a Contractor's License in Florida (and Spot Unlicensed Work Before You Buy)",
         "meta": "How to verify a Florida contractor's license, the warning signs of unlicensed contractors, and what unlicensed work looks like in a home inspection.",
