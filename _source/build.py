@@ -619,6 +619,9 @@ def build_static():
     shutil.copytree(os.path.join(os.path.dirname(__file__), "media"), os.path.join(OUT, "assets", "media"))
     shutil.copy(os.path.join(brand, "shield.svg"), os.path.join(OUT, "favicon.svg"))
     shutil.copy(os.path.join(brand, "apple-touch-icon.png"), os.path.join(OUT, "apple-touch-icon.png"))
+    # IndexNow key file (Bing, Yandex, Seznam...): see _source/indexnow.py
+    with open(os.path.join(OUT, "bc4134a152736a86c3f7ac0cd286e2d6.txt"), "w") as f:
+        f.write("bc4134a152736a86c3f7ac0cd286e2d6")
     with open(os.path.join(OUT, "robots.txt"), "w") as f:
         f.write(f"User-agent: *\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n")
     urls = "".join(f"<url><loc>{DOMAIN}{p}</loc><lastmod>{TODAY}</lastmod></url>" for p in PAGES)
