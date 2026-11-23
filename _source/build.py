@@ -602,6 +602,7 @@ def build_orlando():
     faq = [
         ("Are you licensed to inspect in Orlando and Kissimmee?", f"Yes. Our Florida Home Inspector License #{LICENSE} covers the whole state, and wind mitigation and 4-point forms we sign are accepted by Florida insurers statewide."),
         ("Which days are open?", "We're in the Orlando area Tuesday, November 24 through Sunday, November 29. Openings are limited, so call or book online and we'll confirm a time within 30 minutes."),
+        ("Is there a travel fee?", "No. Orlando, Kissimmee and surrounding-area appointments this week are booked at our regular prices."),
         ("When will I get my report?", "Wind mitigation and 4-point reports are usually delivered the same day, with photos for every item the insurer checks."),
     ]
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([("/areas/","Areas"),(None,"Orlando &amp; Kissimmee")])}
@@ -615,7 +616,7 @@ def build_orlando():
 <li>Official OIR-B1-1802 wind mitigation and standard 4-point insurance forms</li>
 <li>Photo documentation for every item your insurer checks</li>
 <li>Reports usually delivered the same day</li>
-</ul>
+<li>No travel fee for Orlando, Kissimmee and the surrounding area this week</li></ul>
 <p>Want to see the detail first? Look through our <a href="/sample-reports/">sample reports</a>.</p>
 </div></section>
 <section><div class="wrap"><h2>Prices</h2><div style="margin-top:24px">{pricing_block()}</div></div></section>
