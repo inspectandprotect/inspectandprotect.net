@@ -81,7 +81,7 @@ TRIP_END = datetime.date(2026, 11, 29)
 def trip_bar(path="/"):
     if datetime.date.today() > TRIP_END or path == "/orlando-kissimmee/":
         return ""
-    return ('<div class="trip-bar"><div class="wrap"><strong>In Orlando &amp; Kissimmee Nov 24–29.</strong> '
+    return ('<div class="trip-bar"><div class="wrap"><strong>In Orlando, Kissimmee &amp; the surrounding area Tue, Nov 24 – Sun, Nov 29.</strong> '
             'Book a wind mitigation, 4-point or home inspection this week. '
             '<a href="/orlando-kissimmee/">See openings &rarr;</a></div></div>')
 
@@ -602,12 +602,11 @@ def build_orlando():
     faq = [
         ("Are you licensed to inspect in Orlando and Kissimmee?", f"Yes. Our Florida Home Inspector License #{LICENSE} covers the whole state, and wind mitigation and 4-point forms we sign are accepted by Florida insurers statewide."),
         ("Which days are open?", "We're in the Orlando area Tuesday, November 24 through Sunday, November 29. Openings are limited, so call or book online and we'll confirm a time within 30 minutes."),
-        ("Is there a travel fee?", "No. Orlando and Kissimmee appointments this week are booked at our regular prices."),
         ("When will I get my report?", "Wind mitigation and 4-point reports are usually delivered the same day, with photos for every item the insurer checks."),
     ]
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([("/areas/","Areas"),(None,"Orlando &amp; Kissimmee")])}
 <p class="kicker">November 24–29, 2026</p><h1>Home Inspector in Orlando &amp; Kissimmee This Week</h1>
-<p class="lede">We're in Central Florida Tuesday through Sunday with openings for wind mitigation, 4-point, home and mold inspections across Orlando, Kissimmee and nearby Orange and Osceola County.</p>
+<p class="lede">We're in Central Florida Tuesday through Sunday with openings for wind mitigation, 4-point, home and mold inspections across Orlando, Kissimmee, Winter Park, Lake Nona, Celebration, St. Cloud and the rest of Orange and Osceola counties.</p>
 <div class="btn-row"><a class="btn btn-gold" href="/contact/">Book a time</a>{contact_btns()}</div></div></section>
 <section class="bg-white"><div class="wrap narrow prose">
 <h2>Why book this week</h2>
@@ -616,14 +615,14 @@ def build_orlando():
 <li>Official OIR-B1-1802 wind mitigation and standard 4-point insurance forms</li>
 <li>Photo documentation for every item your insurer checks</li>
 <li>Reports usually delivered the same day</li>
-<li>No travel fee for Orlando and Kissimmee this week</li></ul>
+</ul>
 <p>Want to see the detail first? Look through our <a href="/sample-reports/">sample reports</a>.</p>
 </div></section>
 <section><div class="wrap"><h2>Prices</h2><div style="margin-top:24px">{pricing_block()}</div></div></section>
 <section class="bg-white"><div class="wrap narrow"><h2>Orlando &amp; Kissimmee questions</h2><div style="margin-top:16px">{faq_html(faq)}</div></div></section>
 {cta_band("Need an inspector in Orlando or Kissimmee this week?")}'''
     page("/orlando-kissimmee/", "Home Inspector in Orlando &amp; Kissimmee – Wind Mitigation &amp; 4-Point",
-         "Florida-licensed inspector in Orlando and Kissimmee Nov 24–29: wind mitigation and 4-point inspections $150 each, home inspections from $325. No travel fee this week.",
+         "Florida-licensed inspector in Orlando and Kissimmee Nov 24–29: wind mitigation and 4-point inspections $150 each, home inspections from $325. Orlando, Kissimmee, Winter Park, Lake Nona, St. Cloud.",
          body, [faq_ld(faq), breadcrumb_ld([("/areas/", "Areas"), (None, "Orlando & Kissimmee")])])
 
 def build_certifications():
