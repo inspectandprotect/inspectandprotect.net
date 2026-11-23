@@ -76,9 +76,18 @@ def nav_items():
         ("/resources/", "Resources"),
     ]
 
+TRIP_END = datetime.date(2026, 11, 29)
+
+def trip_bar(path="/"):
+    if datetime.date.today() > TRIP_END or path == "/orlando-kissimmee/":
+        return ""
+    return ('<div class="trip-bar"><div class="wrap"><strong>In Orlando &amp; Kissimmee Nov 24–29.</strong> '
+            'Book a wind mitigation, 4-point or home inspection this week. '
+            '<a href="/orlando-kissimmee/">See openings &rarr;</a></div></div>')
+
 def header(path="/"):
     links = "".join(f'<li><a href="{h}">{t}</a></li>' for h, t in nav_items())
-    return f'''<header class="site-header">{topbar(path, "en", "Call or text")}<div class="wrap">
+    return f'''{trip_bar(path)}<header class="site-header">{topbar(path, "en", "Call or text")}<div class="wrap">
 <a class="logo" href="/"><img src="/assets/brand/shield-white.svg" alt="" width="44" height="44"><span class="wm"><span class="w1">INSPECT &amp;</span><span class="w2">PROTECT</span></span></a>
 <ul class="nav">{links}<li><a class="btn btn-gold" href="/contact/">Book Now</a></li></ul>
 <details class="menu"><summary aria-label="Open menu">Menu</summary><ul>{links}<li><a href="/contact/">Book Now</a></li><li><a href="tel:{PHONE_TEL}">Call {PHONE}</a></li></ul></details>
@@ -587,6 +596,36 @@ def build_samples():
          "See real Inspect and Protect home inspection reports from South Florida: a single-family home and a townhome, with client details removed.",
          body, [breadcrumb_ld([(None, "Sample reports")])])
 
+def build_orlando():
+    if datetime.date.today() > TRIP_END:
+        return
+    faq = [
+        ("Are you licensed to inspect in Orlando and Kissimmee?", f"Yes. Our Florida Home Inspector License #{LICENSE} covers the whole state, and wind mitigation and 4-point forms we sign are accepted by Florida insurers statewide."),
+        ("Which days are open?", "We're in the Orlando area Tuesday, November 24 through Sunday, November 29. Openings are limited, so call or book online and we'll confirm a time within 30 minutes."),
+        ("Is there a travel fee?", "No. Orlando and Kissimmee appointments this week are booked at our regular prices."),
+        ("When will I get my report?", "Wind mitigation and 4-point reports are usually delivered the same day, with photos for every item the insurer checks."),
+    ]
+    body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([("/areas/","Areas"),(None,"Orlando &amp; Kissimmee")])}
+<p class="kicker">November 24–29, 2026</p><h1>Home Inspector in Orlando &amp; Kissimmee This Week</h1>
+<p class="lede">We're in Central Florida Tuesday through Sunday with openings for wind mitigation, 4-point, home and mold inspections across Orlando, Kissimmee and nearby Orange and Osceola County.</p>
+<div class="btn-row"><a class="btn btn-gold" href="/contact/">Book a time</a>{contact_btns()}</div></div></section>
+<section class="bg-white"><div class="wrap narrow prose">
+<h2>Why book this week</h2>
+<p>A wind mitigation inspection can lower the windstorm part of your homeowners insurance premium, and many insurers require a 4-point inspection for older homes before they'll write or renew a policy. If your renewal is coming up or you're closing on a home, this week is an easy chance to get it done without waiting.</p>
+<ul><li>Florida-licensed home inspector, InterNACHI certified and insured</li>
+<li>Official OIR-B1-1802 wind mitigation and standard 4-point insurance forms</li>
+<li>Photo documentation for every item your insurer checks</li>
+<li>Reports usually delivered the same day</li>
+<li>No travel fee for Orlando and Kissimmee this week</li></ul>
+<p>Want to see the detail first? Look through our <a href="/sample-reports/">sample reports</a>.</p>
+</div></section>
+<section><div class="wrap"><h2>Prices</h2><div style="margin-top:24px">{pricing_block()}</div></div></section>
+<section class="bg-white"><div class="wrap narrow"><h2>Orlando &amp; Kissimmee questions</h2><div style="margin-top:16px">{faq_html(faq)}</div></div></section>
+{cta_band("Need an inspector in Orlando or Kissimmee this week?")}'''
+    page("/orlando-kissimmee/", "Home Inspector in Orlando &amp; Kissimmee – Wind Mitigation &amp; 4-Point",
+         "Florida-licensed inspector in Orlando and Kissimmee Nov 24–29: wind mitigation and 4-point inspections $150 each, home inspections from $325. No travel fee this week.",
+         body, [faq_ld(faq), breadcrumb_ld([("/areas/", "Areas"), (None, "Orlando & Kissimmee")])])
+
 def build_certifications():
     grid = "".join(f'<div class="cert">{badge_img(s, 140)}<p>{n}</p></div>' for s, n in CERTS)
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None,"Certifications")])}
@@ -638,7 +677,7 @@ if __name__ == "__main__":
     import i18n
     set_groups(i18n.groups())
     build_home(); build_services(); build_pricing(); build_reviews(); build_contact()
-    build_areas(); build_service_cities(); build_resources(); build_partners(); build_samples(); build_certifications()
+    build_areas(); build_service_cities(); build_resources(); build_partners(); build_samples(); build_orlando(); build_certifications()
     i18n.build_all(sys.modules[__name__])
     build_404(); build_static()
     print(len(PAGES), "pages"); print("\n".join(PAGES))

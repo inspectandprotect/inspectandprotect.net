@@ -180,3 +180,5 @@ body{padding-bottom:64px}
 .video-frame{margin-top:28px;max-width:960px;border-radius:14px;overflow:hidden;background:#01172e;box-shadow:0 10px 30px rgba(1,23,46,.18);aspect-ratio:16/9}
 .video-frame video{display:block;width:100%;height:100%;background:#01172e}
 .btn-outline-dark{border:2px solid var(--navy);color:var(--navy);background:transparent}.btn-outline-dark:hover{background:var(--navy);color:#fff}
+
+.trip-bar{background:#6ebe46;color:#0b1b33;font-size:15px;text-align:center}.trip-bar .wrap{padding-top:9px;padding-bottom:9px}.trip-bar a{color:#0b1b33;font-weight:800;text-decoration:underline;white-space:nowrap}
