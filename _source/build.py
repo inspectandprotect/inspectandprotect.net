@@ -363,7 +363,7 @@ def build_services():
 <p class="kicker">{s["kicker"]}</p><h1>{s["h1"]}</h1><p class="lede">{s["lede"]}</p>
 <div class="btn-row"><a class="btn btn-gold" href="/contact/">Book · from {s["price_from"]}</a><a class="btn btn-line" href="/pricing/">Full price list</a></div></div></section>
 <section class="bg-white"><div class="wrap"><h2>What we check</h2><div class="grid" style="margin-top:28px">{covers}</div></div></section>
-<section><div class="wrap narrow prose">{paras}{note}{sample_callout() if s["slug"] in SAMPLE_SERVICES else ""}{related}</div></section>
+<section><div class="wrap narrow prose">{paras}{note}{(sample_callout(text="See a real, fully completed report with photos for every item, client details removed.", btn="View the sample report", href="/sample-reports/" + ("wind-mitigation" if s["slug"]=="wind-mitigation" else "4-point") + "/") if s["slug"] in ("wind-mitigation","4-point-inspection") else sample_callout()) if s["slug"] in SAMPLE_SERVICES else ""}{related}</div></section>
 {faq}
 <section class="bg-white"><div class="wrap"><h2>Areas we serve</h2><div style="margin-top:20px">{city_pills_for(s["slug"])}</div>
 <h2 style="margin-top:48px">Other services</h2><div style="margin-top:24px">{services_cards(exclude=s["slug"])}</div></div></section>
@@ -565,12 +565,18 @@ def build_404():
     os.rmdir(os.path.join(OUT, "404"))
     PAGES.remove("/404/")
 
-SAMPLE_SERVICES = {"home-inspection", "pre-listing-inspection", "new-construction-inspection"}
+SAMPLE_SERVICES = {"home-inspection", "pre-listing-inspection", "new-construction-inspection", "wind-mitigation", "4-point-inspection"}
 SAMPLES = [
     ("sample-report-single-family-home.pdf", "Single-family home", "70 pages · 5 MB",
      "A one-story house with an attached living space and a rear accessory structure. Shows how we document additions, roof, electrical panels, AC equipment and moisture readings."),
     ("sample-report-townhome.pdf", "Two-story townhome", "17 pages · 6 MB",
      "An all-electric end-unit townhome. A shorter report that shows the same layout: a summary of findings, then each system with photos and plain-English notes."),
+]
+INSURANCE_SAMPLES = [
+    ("sample-report-wind-mitigation.pdf", "Wind mitigation (OIR-B1-1802)", "15 pages · 1 MB",
+     "A new two-story concrete home in Miami-Dade (HVHZ). Every question on the state form is answered and verified, with a photo packet organized by question: building permit, roof covering approval, concrete roof deck and wall sections, and impact-rated windows and doors."),
+    ("sample-report-4-point.pdf", "4-point inspection", "15 pages · 1 MB",
+     "The same home's 4-point: roof, electrical, HVAC and plumbing on the standard insurance form, every section completed, with a photo packet covering each side of the house, the panel with the cover off, both AC systems, the water heater and the plumbing fixtures."),
 ]
 
 def sample_callout(title="See exactly what you'll get", text="Real reports from real South Florida inspections, with client details removed.",
@@ -582,18 +588,25 @@ def build_samples():
         f'''<div class="card"><p class="kicker" style="margin:0 0 6px">{meta}</p><h3>{name}</h3><p>{desc}</p>
 <div class="btn-row" style="margin-top:18px"><a class="btn btn-dark" href="/reports/{f}">Open the report (PDF)</a></div></div>'''
         for f, name, meta, desc in SAMPLES)
+    ins_cards = "".join(
+        f'''<div class="card"><p class="kicker" style="margin:0 0 6px">{meta}</p><h3>{name}</h3><p>{desc}</p>
+<div class="btn-row" style="margin-top:18px"><a class="btn btn-dark" href="/reports/{f}">Open the report (PDF)</a><a href="/sample-reports/{"wind-mitigation" if "wind" in f else "4-point"}/" style="align-self:center;font-weight:700">What's inside &rarr;</a></div></div>'''
+        for f, name, meta, desc in INSURANCE_SAMPLES)
     body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([(None, "Sample reports")])}
 <h1>Sample inspection reports</h1>
-<p class="lede">These are real reports from our inspections, shared so you can see the detail before you book. Client names, addresses, dates and identifying details in the photos have been removed.</p></div></section>
-<section class="bg-white"><div class="wrap"><div class="grid grid-wide">{cards}</div>
+<p class="lede">These are real reports from our inspections, shared so you can see the detail before you book. Client names, addresses and anything in the photos that could identify the home have been removed.</p></div></section>
+<section class="bg-white"><div class="wrap"><h2>Full home inspections</h2><div class="grid grid-wide">{cards}</div>
 <div class="prose narrow" style="margin-top:40px"><h2>What every report includes</h2>
 <ul><li>A summary of findings sorted by severity: safety hazards, deficiencies, maintenance items and limitations</li>
 <li>Roof, structure, exterior, electrical, plumbing, water heater, AC and interior, each with photos</li>
 <li>Moisture meter readings and thermal images where we found something worth checking</li>
 <li>Plain-English notes on what each finding means and who should look at it</li>
-<li>Delivered the same day as the inspection</li></ul></div></div></section>{cta_band()}'''
+<li>Delivered the same day as the inspection</li></ul></div></div></section>
+<section><div class="wrap"><h2>Insurance inspections</h2>
+<p class="lede">Wind mitigation and 4-point reports go straight to your insurance company, so they're built to be accepted the first time: the official forms, completely filled out, with a labeled photo for every item the underwriter checks.</p>
+<div class="grid grid-wide" style="margin-top:24px">{ins_cards}</div></div></section>{cta_band()}'''
     page("/sample-reports/", "Sample Home Inspection Reports",
-         "See real Inspect and Protect home inspection reports from South Florida: a single-family home and a townhome, with client details removed.",
+         "See real Inspect and Protect reports from South Florida: full home inspections, a wind mitigation (OIR-B1-1802) and a 4-point inspection, with client details removed.",
          body, [breadcrumb_ld([(None, "Sample reports")])])
 
 def build_orlando():
@@ -625,6 +638,46 @@ def build_orlando():
     page("/orlando-kissimmee/", "Home Inspector in Orlando &amp; Kissimmee – Wind Mitigation &amp; 4-Point",
          "Florida-licensed inspector in Orlando and Kissimmee Nov 24–29: wind mitigation and 4-point inspections $150 each, home inspections from $325. Orlando, Kissimmee, Winter Park, Lake Nona, St. Cloud.",
          body, [faq_ld(faq), breadcrumb_ld([("/areas/", "Areas"), (None, "Orlando & Kissimmee")])])
+
+
+SAMPLE_PAGES = [
+    ("wind-mitigation", "sample-report-wind-mitigation.pdf", "Sample Wind Mitigation Report (OIR-B1-1802)",
+     "See a real, fully completed Florida wind mitigation report (OIR-B1-1802) with a photo packet for every question, from a Florida-licensed inspector. Client details removed.",
+     "A real Florida wind mitigation inspection report, fully completed, with every answer backed by photos and documents.",
+     [("Question 1, Building code", "Answered B: built under the 2007 or later Florida Building Code, verified with the building permit."),
+      ("Question 2, Wind region", "High-Velocity Hurricane Zone (Miami-Dade)."),
+      ("Questions 3 and 7, Roof slope and shape", "Low-slope flat roof with parapets, shown in photos and the roof plan."),
+      ("Question 4, Roof covering", "Roofing product approval (NOA) number and installation year recorded."),
+      ("Questions 5 and 6, Roof deck and roof-to-wall", "Reinforced concrete roof deck and a structural roof-to-wall connection, the strongest rating on the form, shown with wall section drawings."),
+      ("Question 8, Secondary water resistance", "Answered from what was verified on site."),
+      ("Question 9, Opening protection", "Level A: impact-rated windows, sliding doors and garage door, with product approval numbers and glass labels.")],
+     "Each photo is labeled with the form question it supports, so your insurance company can match every credit to proof. That's what helps a wind mitigation report get accepted the first time.",
+     "/services/wind-mitigation/", "Wind mitigation inspections"),
+    ("4-point", "sample-report-4-point.pdf", "Sample 4-Point Inspection Report",
+     "See a real, fully completed Florida 4-point insurance inspection report with photos of the roof, electrical panel, HVAC and plumbing. Client details removed.",
+     "A real Florida 4-point insurance inspection, every section of the form completed, with a full photo packet.",
+     [("Roof", "Covering type, age, remaining life and condition, with photos of the roof surface."),
+      ("Electrical", "Panel brand, amperage and wiring type, with the panel cover off, the breakers, the meter and outlet tests."),
+      ("HVAC", "Age and working condition of each system, with data plates for both condensers and both air handlers."),
+      ("Plumbing", "Pipe type, water heater age and location, and the condition of fixtures and connections, with photos of each."),
+      ("Each side of the home", "Photos of all four elevations, which most insurers ask for.")],
+     "Underwriters use the 4-point to decide whether to write or renew a policy on an older home, so a complete form with clear photos keeps things moving.",
+     "/services/4-point-inspection/", "4-point inspections"),
+]
+
+def build_sample_pages():
+    for slug, pdf, title, meta, lede, items, why, svc_href, svc_name in SAMPLE_PAGES:
+        rows = "".join(f"<li><strong>{h}:</strong> {t}</li>" for h, t in items)
+        body = f'''<section class="page-hero on-dark"><div class="wrap">{crumbs([("/sample-reports/","Sample reports"),(None,title)])}
+<h1>{title}</h1><p class="lede">{lede}</p>
+<div class="btn-row"><a class="btn btn-gold" href="/reports/{pdf}">Open the full report (PDF)</a><a class="btn btn-line" href="/contact/">Book an inspection</a></div></div></section>
+<section class="bg-white"><div class="wrap narrow prose">
+<h2>What's in this report</h2><ul>{rows}</ul><p>{why}</p>
+<p>This is a real report from one of our inspections. The client's name, address, contact details and permit numbers have been removed.</p>
+<p>Learn more about our <a href="{svc_href}">{svc_name.lower()}</a>, see our <a href="/pricing/">prices</a>, or browse <a href="/sample-reports/">all sample reports</a>.</p>
+</div></section>{cta_band()}'''
+        page(f"/sample-reports/{slug}/", title, meta, body,
+             [breadcrumb_ld([("/sample-reports/", "Sample reports"), (None, title)])])
 
 def build_certifications():
     grid = "".join(f'<div class="cert">{badge_img(s, 140)}<p>{n}</p></div>' for s, n in CERTS)
@@ -677,7 +730,7 @@ if __name__ == "__main__":
     import i18n
     set_groups(i18n.groups())
     build_home(); build_services(); build_pricing(); build_reviews(); build_contact()
-    build_areas(); build_service_cities(); build_resources(); build_partners(); build_samples(); build_orlando(); build_certifications()
+    build_areas(); build_service_cities(); build_resources(); build_partners(); build_samples(); build_sample_pages(); build_orlando(); build_certifications()
     i18n.build_all(sys.modules[__name__])
     build_404(); build_static()
     print(len(PAGES), "pages"); print("\n".join(PAGES))
